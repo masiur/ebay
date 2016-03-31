@@ -19,6 +19,7 @@ Route::get('/', function () {
 // 	//return array_keys(config('customConfig.roles'));
 // 	return redirect()->route('login');
 // });
+
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'Auth\AuthController@login']);
