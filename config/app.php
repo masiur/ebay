@@ -148,6 +148,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
+        Artdarek\OAuth\OAuthServiceProvider::class,
     ],
 
     /*
@@ -198,7 +199,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
-        'Entrust'   =>Zizaco\Entrust\EntrustFacade::class
+        'Entrust'   =>Zizaco\Entrust\EntrustFacade::class,
+        'OAuth'     => Artdarek\OAuth\Facade\OAuth::class,
     ],
 
 ];
