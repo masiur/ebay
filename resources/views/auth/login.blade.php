@@ -23,6 +23,7 @@
                     {!! Form::text('email', '', array('class' => 'form-control', 'placeholder' => 'Email Address', 'type'=>'text','autofocus')) !!}
                 </div>
             </div>
+
             <div class="form-group ">
 
                 <div class="col-xs-12">
@@ -77,7 +78,7 @@
         <div class="registration">
             <br>
             Don't have an account yet?
-            <a class="" href="#">
+            <a class="" href="{{ route('user.create') }}">
                 Create an account
             </a>
         </div>
