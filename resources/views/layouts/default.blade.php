@@ -2,6 +2,7 @@
 <html lang="en">
 
 @include('includes.header')
+@yield('style')
 <body>
 
 @include('includes.sideBar')
