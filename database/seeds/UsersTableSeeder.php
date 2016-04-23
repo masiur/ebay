@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
         //Use this user for login as user
         User::create(['name' => 'joy','email' => 'joy@mail.com','password' => bcrypt('a')]);
 
+        User::create(['name' => 'Talha','email' => 'talha@mail.com','password' => bcrypt('a')]);
         //creating 10 test users
         // factory(User::class,10)->create();
 

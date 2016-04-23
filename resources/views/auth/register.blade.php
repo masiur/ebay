@@ -1,59 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keyword" content="">
-    <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>{{ $title }} - {{ Config::get('customConfig.names.siteName') }}</title>
 
-    {!! Html::style('css/bootstrap.min.css') !!}
-    {!! Html::style('css/bootstrap-reset.css') !!}
-    {!! Html::style('fonts/font-awesome/css/font-awesome.css') !!}
-    {!! Html::style('css/style.css') !!}
-    {!! Html::style('css/style-responsive.css') !!}
-    @yield('style')
-    {!! Html::style('css/custom.css') !!}
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-    {!! HTML::script('js/html5shiv.js') !!}
-    {!! HTML::script('js/respond.min.js') !!}
-    <![endif]-->
-</head>
+@include('includes.header')
 
-<body class="login-body">
-<div class="container">
-    {!! Form::open(array('route' => 'user.store', 'method' => 'post', 'class' => 'form-signin')) !!}
-    <h2 class="form-signin-heading">Sign Up now</h2>
-    <div class="login-wrap">
+
+
+<body>
+
+<div class="wrapper-page animated fadeInDown">
+    <div class="panel panel-color panel-primary">
+        <div class="panel-heading">
+            <h3 class="text-center m-t-10"> Sign Up In <strong>Laravel 5.1</strong> </h3>
+        </div>
+        <br>
         @include('includes.alert')
-        {!! Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Full Name', 'autofocus')) !!}
-        {!! Form::text('email', '', array('class' => 'form-control', 'placeholder' => 'Email Address', 'autofocus')) !!}
-        {!! Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password')) !!}
-        {!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Confirm Password')) !!}
 
-        <label class="checkbox">
-		                <span class="pull-right">
-		                    <a data-toggle="modal" href="{{route('login')}}"> Already a member ?</a>
-		                </span>
-        </label>
-        {!! Form::submit('Log in', array('class' => 'btn btn-lg btn-login btn-block')) !!}
+        {!! Form::open(array('route' => 'user.store', 'method' => 'post', 'class' => 'form-signin')) !!}
+
+        <div class="form-group ">
+            <div class="col-xs-12"><br>
+                {!! Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Full Name', 'autofocus')) !!}
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <div class="col-xs-12"><br>
+                {!! Form::text('email', '', array('class' => 'form-control', 'placeholder' => 'Email Address', 'autofocus')) !!}
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <div class="col-xs-12"><br>
+                {!! Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password')) !!}
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <div class="col-xs-12"><br>
+                {!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Confirm Password')) !!}
+            </div>
+        </div>
+
+
+
+        <div class="form-group text-right">
+            <br>
+            <div class="col-xs-12"><br>
+                {!! Form::submit('Sign Up', array('class' => 'btn btn-lg btn-login btn-block btn-purple ', 'type'=>'submit')) !!}
+                <br>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <center>
+            <p>or you can sign up via social network</p>
+
+            <div class="login-social-link">
+                <a href="{{ route('login/fb') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
+                <!-- <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i>Twitter</a> -->
+                <a href="{{ route('login/gp') }}" class="btn btn-danger"><i class="fa fa-google-plus"></i> Google</a>
+            </div>
+
+
+            <div class="registration">
+                <br>
+                Already have an account?
+                <a class="" href="{{ route('login') }}">
+                    Log In
+                </a>
+            </div>
+        </center>
+
+        {!! Form::close() !!}
+
     </div>
-
-
-
-
-    {!! Form::close() !!}
-
 </div>
 
-<!-- js placed at the end of the document so the pages load faster -->
-{!! Html::script('js/jquery.js') !!}
-{!! Html::script('js/bootstrap.min.js') !!}
 
 </body>
+<!-- js placed at the end of the document so the pages load faster -->
+{!! HTML::script('js/jquery.js') !!}
+{!! HTML::script('js/bootstrap.min.js') !!}
+{!! HTML::script('js/pace.min.js') !!}
+{!! HTML::script('js/wow.min.js') !!}
+{!! HTML::script('js/jquery.nicescroll.js') !!}
+
+        <!--common script for all pages-->
+{!! HTML::script('js/jquery.app.js') !!}
+
 </html>
