@@ -12,7 +12,7 @@
 <div class="wrapper-page animated fadeInDown">
     <div class="panel panel-color panel-primary">
         <div class="panel-heading">
-            <h3 class="text-center m-t-10"> Sign In to <strong>Laravel 5.1</strong> </h3>
+            <h3 class="text-center m-t-10"> Sign In to <strong>Template (5.1) </strong> </h3>
         </div>
         <br>
              @include('includes.alert')
