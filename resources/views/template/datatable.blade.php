@@ -9,7 +9,7 @@
     <!-- Page Content Start -->
     <!-- ================== -->
 
-    <div class="wraper container-fluid">
+
         <div class="page-title">
             <h3 class="title">Datatable</h3>
         </div>
@@ -71,14 +71,10 @@
                     </div>
                 </div>
             </div>
-
         </div> <!-- End Row -->
 
 
-
-    </div>
-
-
+@stop
 
 @section('script')
 <script src="assets/datatables/jquery.dataTables.min.js"></script>
@@ -92,4 +88,3 @@
 </script>
 @stop
 
-@stop

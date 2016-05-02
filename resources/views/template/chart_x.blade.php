@@ -4,26 +4,10 @@
 <!-- ================== -->
 
 
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-reset.css" rel="stylesheet">
-
-<!--Animation css-->
-<link href="css/animate.css" rel="stylesheet">
-
-<!--Icon-fonts css-->
-<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-<link href="assets/ionicon/css/ionicons.min.css" rel="stylesheet" />
-
-
-<!-- Custom styles for this template -->
-<link href="css/style.css" rel="stylesheet">
-<link href="css/helper.css" rel="stylesheet">
-
 <!-- Page Content Start -->
 <!-- ================== -->
 
-<div class="wraper container-fluid">
+
     <div class="page-title">
         <h3 class="title">Other Charts </h3>
     </div>
@@ -141,34 +125,34 @@
 
     </div> <!-- End row -->
 
+@stop
+
 
 @section('script')
 
+      <!-- EASY PIE CHART JS -->
+    {!! Html::script('assets/easypie-chart/easypiechart.min.js') !!}
+    {!! Html::script('assets/easypie-chart/jquery.easypiechart.min.js') !!}
+    {!! Html::script('assets/easypie-chart/example.js') !!}
 
-
-    <!-- EASY PIE CHART JS -->
-    <script src="assets/easypie-chart/easypiechart.min.js"></script>
-    <script src="assets/easypie-chart/jquery.easypiechart.min.js"></script>
-    <script src="assets/easypie-chart/example.js"></script>
 
     <!-- KNOB JS -->
     <!--[if IE]>
-    <script type="text/javascript" src="assets/jquery-knob/excanvas.js"></script>
+    {!! Html::script('assets/jquery-knob/excanvas.js') !!}
+
     <![endif]-->
-    <script src="assets/jquery-knob/jquery.knob.js"></script>
+    {!! Html::script('assets/jquery-knob/jquery.knob.js') !!}
 
 
-    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
-    <script src="assets/sparkline-chart/jquery.sparkline.min.js" type="text/javascript"></script>
-    <script src="assets/sparkline-chart/chart-sparkline.js" type="text/javascript"></script>
+   <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    {!! Html::script('assets/sparkline-chart/jquery.sparkline.min.js') !!}
+    {!! Html::script('assets/sparkline-chart/chart-sparkline.js') !!}
+
     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
 
-
-
-
-
-
 @stop
-@stop
+
+
+
 

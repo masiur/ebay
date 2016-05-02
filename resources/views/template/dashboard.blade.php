@@ -4,7 +4,7 @@
         <!-- Page Content Start -->
 <!-- ================== -->
 
-<div class="wraper container-fluid">
+
     <div class="page-title">
         <h3 class="title">Welcome !</h3>
     </div>
@@ -294,11 +294,11 @@
     </div> <!-- End row -->
 
 
-</div>
+
 <!-- Page Content Ends -->
 <!-- ================== -->
 
-
+@stop
 
 @section('script')
 <!-- js placed at the end of the document so the pages load faster -->
@@ -358,4 +358,3 @@
 
 @stop
 
-@stop

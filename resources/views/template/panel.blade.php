@@ -1,10 +1,10 @@
 @extends('layouts.default')
 @section('content')
 
-        <!-- Page Content Start -->
+<!-- Page Content Start -->
 <!-- ================== -->
 
-<div class="wraper container-fluid">
+
     <div class="page-title">
         <h3 class="title">Panels</h3>
     </div>
@@ -109,4 +109,6 @@
         </div>
     </div> <!-- End row -->
 
-    @stop
+
+
+@stop

@@ -4,7 +4,7 @@
         <!-- Page Content Start -->
 <!-- ================== -->
 
-<div class="wraper container-fluid">
+
     <div class="page-title">
         <h3 class="title">Contacts </h3>
     </div>
@@ -397,6 +397,6 @@
     </div>
 
 
-</div> <!-- END Wraper -->
+
 
 @stop

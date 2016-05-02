@@ -4,7 +4,7 @@
   <!-- Page Content Start -->
             <!-- ================== -->
 
-            <div class="wraper container-fluid">
+
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="bg-picture" style="background-image:url('img/bg_6.jpg')">
@@ -260,15 +260,8 @@
                 </div>
             </div>
 
-            
-
-            
 
 
-        </div>
-
-        <!-- Page Content Ends -->
+<!-- Page Content Ends -->
 <!-- ================== -->
-
-
 @stop

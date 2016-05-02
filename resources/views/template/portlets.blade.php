@@ -4,7 +4,7 @@
  <!-- Page Content Start -->
             <!-- ================== -->
 
-            <div class="wraper container-fluid">
+
                 <div class="page-title">
                     <h3 class="title">Portlets</h3>
                 </div>
@@ -226,6 +226,6 @@
 
                 </div> <!-- End row -->
 
-            </div> <!-- END Wraper -->
+
 
 @stop

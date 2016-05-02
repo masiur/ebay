@@ -19,6 +19,6 @@
   	{!! Html::script('js/jquery.app.js') !!}
 
 
-
+     @yield('script')
 
 

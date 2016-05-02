@@ -14,12 +14,6 @@
 Route::get('/', function () {
 	return Redirect::route('dashboard');
 });
-// Route::get('/',function(){
-// 	// return \App\User::first();
-// 	//return array_keys(config('customConfig.roles'));
-// 	return redirect()->route('login');
-// });
-
 
 
 Route::group(['middleware' => 'guest'], function(){
@@ -99,11 +93,15 @@ Route::get('form-wizard',function(){
 	return View::make('template.form_wizard')->with('title','Form Wizard');
 });
 
+
 Route::get('dataTable',function(){
 	return View::make('template.datatable')->with('title','Data Table');
 });
 
 
+Route::get('ScriptDataTable',function(){
+	return View::make('template.editDataTable')->with('title','Editable Data Table');
+});
 
 
 

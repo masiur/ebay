@@ -2,7 +2,7 @@
 @section('content')
 
 
-            <div class="wraper container-fluid">
+
                 <div class="page-title">
                     <h3 class="title">Timeline</h3>
                 </div>
@@ -141,7 +141,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+
 
 
 @stop
