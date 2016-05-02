@@ -99,7 +99,7 @@ Route::get('dataTable',function(){
 });
 
 
-Route::get('ScriptDataTable',function(){
+Route::get('EditableDataTable',function(){
 	return View::make('template.editDataTable')->with('title','Editable Data Table');
 });
 
