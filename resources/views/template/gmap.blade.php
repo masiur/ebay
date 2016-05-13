@@ -5,7 +5,7 @@
         <!-- Page Content Start -->
 <!-- ================== -->
 
-<div class="wraper container-fluid">
+
     <div class="page-title">
         <h3 class="title">Google Maps</h3>
     </div>
@@ -221,21 +221,15 @@
     </div>
     <!-- End Row -->
 
-</div> <!-- END Wraper -->
+
+@stop
+
 
 @section('script')
-
-
-
-
-<!-- google maps api -->
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<!-- main file -->
-<script src="assets/gmaps/gmaps.js"></script>
-<!-- demo codes -->
-<script src="assets/gmaps/gmaps-plugin.js"></script>
-
+        <!-- google maps api -->
+        {!! Html::script('http://maps.google.com/maps/api/js?sensor=true') !!}
+        {!! Html::script('assets/gmaps/gmaps.js') !!}
+        {!! Html::script('assets/gmaps/gmaps-plugin.js') !!}
 
 @stop
 
-@stop

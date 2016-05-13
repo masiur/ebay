@@ -2,14 +2,14 @@
 @section('content')
 
         <!--Form Wizard-->
-<link rel="stylesheet" type="text/css" href="assets/form-wizard/jquery.steps.css" />
+
 
 
 
         <!-- Page Content Start -->
 <!-- ================== -->
 
-<div class="wraper container-fluid">
+
     <div class="page-title">
         <h3 class="title">Form Wizard</h3>
     </div>
@@ -334,25 +334,29 @@
     </div> <!-- End row -->
 
 
-</div>
+
 <!-- Page Content Ends -->
 <!-- ================== -->
+@stop
+
 @section('script')
 
-
-
-<!--Form Validation-->
-<script src="assets/form-wizard/bootstrap-validator.min.js" type="text/javascript"></script>
-
-<!--Form Wizard-->
-<script src="assets/form-wizard/jquery.steps.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="assets/jquery.validate/jquery.validate.min.js"></script>
-
-<!--wizard initialization-->
-<script src="assets/form-wizard/wizard-init.js" type="text/javascript"></script>
-
-
+        <!--Form Validation-->
+{!! Html::script('assets/form-wizard/bootstrap-validator.min.js') !!}
+        <!--Form Wizard-->
+{!! Html::script('assets/form-wizard/jquery.steps.min.js') !!}
+{!! Html::script('assets/jquery.validate/jquery.validate.min.js') !!}
+        <!--wizard initialization-->
+{!! Html::script('assets/form-wizard/wizard-init.js') !!}
 
 @stop
+
+
+
+
+
+@section('style')
+        <!--Form Wizard-->
+{!! Html::style('assets/form-wizard/jquery.steps.css') !!}
 
 @stop

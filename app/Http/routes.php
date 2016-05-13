@@ -14,12 +14,6 @@
 Route::get('/', function () {
 	return Redirect::route('dashboard');
 });
-// Route::get('/',function(){
-// 	// return \App\User::first();
-// 	//return array_keys(config('customConfig.roles'));
-// 	return redirect()->route('login');
-// });
-
 
 
 Route::group(['middleware' => 'guest'], function(){
@@ -100,6 +94,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 // 	return View::make('template.advanced_form')->with('title','Advanced Form');//problem
 // });
 
+<<<<<<< HEAD
 // Route::get('form-wizard',function(){
 // 	return View::make('template.form_wizard')->with('title','Form Wizard');
 // });
@@ -107,8 +102,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 // Route::get('dataTable',function(){
 // 	return View::make('template.datatable')->with('title','Data Table');
 // });
+=======
+
+Route::get('dataTable',function(){
+	return View::make('template.datatable')->with('title','Data Table');
+});
+>>>>>>> origin/master
 
 
+Route::get('EditableDataTable',function(){
+	return View::make('template.editDataTable')->with('title','Editable Data Table');
+});
 
 
 

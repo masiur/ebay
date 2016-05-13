@@ -34,7 +34,7 @@
         {!! Html::style('css/style.css') !!}
         {!! Html::style('css/helper.css') !!}
 
-
+        @yield('style')
 
                 <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
         <!--[if lt IE 9]>

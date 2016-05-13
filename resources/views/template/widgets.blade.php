@@ -1,25 +1,10 @@
 @extends('layouts.default')
 @section('content')
 
-
-
-
-<!--Animation css-->
-<link href="css/animate.css" rel="stylesheet">
-
-<!--Icon-fonts css-->
-<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-<link href="assets/ionicon/css/ionicons.min.css" rel="stylesheet" />
-
-<!-- Plugins css -->
-<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
-
-
-
 <!-- Page Content Start -->
-            <!-- ================== -->
+<!-- ================== -->
 
-            <div class="wraper container-fluid">
+
                 <div class="page-title"> 
                     <h3 class="title">Widgets</h3> 
                 </div>
@@ -446,10 +431,12 @@
                 </div>  <!-- End row -->
 
 
-            </div> <!-- END Wraper -->
+
 
             <!-- Page Content Ends -->
             <!-- ================== -->
+
+@stop
 
 @section('script')
 
@@ -457,30 +444,37 @@
 
 
 <!-- Counter-up -->
-<script src="js/waypoints.min.js" type="text/javascript"></script>
-<script src="js/jquery.counterup.min.js" type="text/javascript"></script>
+{!! Html::script('js/waypoints.min.js') !!}
+{!! Html::script('js/jquery.counterup.min.js') !!}
+
 
 <!-- skycons -->
-<script src="js/skycons.min.js" type="text/javascript"></script>
+{!! Html::script('js/skycons.min.js') !!}
+
 
 <!-- EASY PIE CHART JS -->
-<script src="assets/easypie-chart/easypiechart.min.js"></script>
-<script src="assets/easypie-chart/jquery.easypiechart.min.js"></script>
-<script src="assets/easypie-chart/example.js"></script>
+{!! Html::script('assets/easypie-chart/easypiechart.min.js') !!}
+{!! Html::script('assets/easypie-chart/jquery.easypiechart.min.js') !!}
+{!! Html::script('assets/easypie-chart/example.js') !!}
+
 
 <!-- sparkline -->
-<script src="assets/sparkline-chart/jquery.sparkline.min.js" type="text/javascript"></script>
-<script src="assets/sparkline-chart/chart-sparkline.js" type="text/javascript"></script>
+{!! Html::script('assets/sparkline-chart/jquery.sparkline.min.js') !!}
+{!! Html::script('assets/sparkline-chart/chart-sparkline.js') !!}
+
 
 <!-- KNOB JS -->
 <!--[if IE]>
-<script type="text/javascript" src="assets/jquery-knob/excanvas.js"></script>
+
+{!! Html::script('assets/jquery-knob/excanvas.js') !!}
+
 <![endif]-->
-<script src="assets/jquery-knob/jquery.knob.js"></script>
+{!! Html::script('assets/jquery-knob/jquery.knob.js') !!}
+
 
 <!-- owl-carousel -->
-<script src="assets/owl-carousel/owl.carousel.js"></script>
 
+{!! Html::script('assets/owl-carousel/owl.carousel.js') !!}
 
 
 
@@ -521,5 +515,19 @@
 </script>
 
 @stop
+
+
+
+@section('style')
+
+<!--Animation css-->
+{!! Html::style('css/animate.css') !!}
+
+<!--Icon-fonts css-->
+{!! Html::style('assets/font-awesome/css/font-awesome.css') !!}
+{!! Html::style('assets/ionicon/css/ionicons.min.css') !!}
+
+<!-- Plugins css -->
+{!! Html::style('assets/owl-carousel/owl.carousel.css') !!}
 
 @stop
