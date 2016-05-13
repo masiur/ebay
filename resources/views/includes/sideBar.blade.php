@@ -19,8 +19,8 @@
                      <li class="{!! Menu::areActiveURLs(['dashboard', 'change-password']) !!}"><a href="#"><i class="ion-flask"></i> <span class="nav-label">UI Elements</span></a>
                         <ul class="list-unstyled">
 
-                            <li class="{!! Menu::isActiveURL('dashboard') !!}">
-                                <a href="{!!  URL::to( 'dashboard') !!}">Dashboard</a>
+                            <li class="{!! Menu::isActiveRoute('dashboard') !!}">
+                                <a href="{!!  URL::route( 'dashboard') !!}">Dashboard</a>
                             </li>
 
                             <li class="{!! Menu::isActiveURL('change-password') !!}">
