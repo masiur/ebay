@@ -53,9 +53,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 
 
 
-// Route::get('profile1',function(){
-// 	return View::make('template.profile')->with('title','Profile');
-// });
+Route::get('profile1',function(){
+	return View::make('template.profile')->with('title','Profile');
+});
 
 // Route::get('timeline',function(){
 // 	return View::make('template.timeline')->with('title','Timeline');
