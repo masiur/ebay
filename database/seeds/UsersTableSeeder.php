@@ -2,7 +2,7 @@
 
 use App\User;
 use Illuminate\Database\Seeder;
-
+use Faker\Factory as Faker;
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -13,11 +13,11 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //Use this user for login as admin
-        User::create(['username' => 'rat','email' => 'rat@mail.com','password' => bcrypt('a')]);
+        User::create(['username' => 'admin','email' => 'admin@infancyit.com','password' => bcrypt('a')]);
         //Use this user for login as user
-        User::create(['username' => 'joy','email' => 'joy@mail.com','password' => bcrypt('a')]);
+        User::create(['username' => 'raabit','email' => 'raabithassan@gmail.com','password' => bcrypt('a')]);
 
-        User::create(['username' => 'Talha','email' => 'talha@mail.com','password' => bcrypt('a')]);
+        User::create(['username' => 'masiur','email' => 'mrsiddiki@gmail.com','password' => bcrypt('a')]);
         //creating 10 test users
         // factory(User::class,10)->create();
 
