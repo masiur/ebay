@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-	return Redirect::route('dashboard');
+	return Redirect::to('/home');
+});
+
+Route::get('/home', function () {
+	return view('home')->with('title', 'Home');
 });
 
 

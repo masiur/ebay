@@ -32,34 +32,34 @@
                 <div class="line"></div>
                 <p>Background patterns</p>
                 <div class="predefined_styles" id="patternswitch_area">
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/binding_light.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/binding_dark.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/dark_fish_skin.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/dimension.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/escheresque_ste.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/food.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/giftly.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/grey_wash_wall.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/ps_neutral.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/pw_maze_black.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/pw_pattern.png')"></a>
-                    <a href="#" class="patternswitch" style="background-image: url('img/patterns/simple_dashed.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/binding_light.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/binding_dark.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/dark_fish_skin.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/dimension.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/escheresque_ste.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/food.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/giftly.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/grey_wash_wall.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/ps_neutral.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/pw_maze_black.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/pw_pattern.png')"></a>
+                    <a href="#" class="patternswitch" style="background-image: url('couponia/img/patterns/simple_dashed.png')"></a>
                 </div>
                 <div class="line"></div>
                 <p>Background images</p>
                 <div class="predefined_styles" id="bgimageswitch_area">
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/bike.jpg')" data-source="img/backgrounds/bike.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/flowers.jpg')" data-source="img/backgrounds/flowers.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/wood.jpg')" data-source="img/backgrounds/wood.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/taxi.jpg')" data-source="img/backgrounds/taxi.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/phone.jpg')" data-source="img/backgrounds/phone.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/road.jpg')" data-source="img/backgrounds/road.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/keyboard.jpg')" data-source="img/backgrounds/keyboard.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/beach.jpg')" data-source="img/backgrounds/beach.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/street.jpg')" data-source="img/backgrounds/street.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/nature.jpg')" data-source="img/backgrounds/nature.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/bridge.jpg')" data-source="img/backgrounds/bridge.jpg"></a>
-                    <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/cameras.jpg')" data-source="img/backgrounds/cameras.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/bike.jpg')" data-source="couponia/img/backgrounds/bike.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/flowers.jpg')" data-source="couponia/img/backgrounds/flowers.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/wood.jpg')" data-source="couponia/img/backgrounds/wood.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/taxi.jpg')" data-source="couponia/img/backgrounds/taxi.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/phone.jpg')" data-source="couponia/img/backgrounds/phone.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/road.jpg')" data-source="couponia/img/backgrounds/road.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/keyboard.jpg')" data-source="couponia/img/backgrounds/keyboard.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/beach.jpg')" data-source="couponia/img/backgrounds/beach.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/street.jpg')" data-source="couponia/img/backgrounds/street.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/nature.jpg')" data-source="couponia/img/backgrounds/nature.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/bridge.jpg')" data-source="couponia/img/backgrounds/bridge.jpg"></a>
+                    <a href="#" class="bgimageswitch" style="background-image: url('couponia/img/switcher/cameras.jpg')" data-source="couponia/img/backgrounds/cameras.jpg"></a>
                 </div>
                 <div class="line"></div>
             </div>

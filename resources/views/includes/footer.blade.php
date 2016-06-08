@@ -8,7 +8,7 @@
                     <div class="row row-wrap">
                         <div class="col-md-3">
                             <a href="index.html">
-                                <img src="img/logo.png" alt="logo" title="logo" class="logo">
+                                <img src="couponia/img/logo.png" alt="logo" title="logo" class="logo">
                             </a>
                             <ul class="list list-social">
                                 <li>
@@ -53,7 +53,7 @@
                             <ul class="thumb-list">
                                 <li>
                                     <a href="#">
-                                        <img src="img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
+                                        <img src="couponia/img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
                                     </a>
                                     <div class="thumb-list-item-caption">
                                         <p class="thumb-list-item-meta">Jul 18, 2014</p>
@@ -63,7 +63,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
+                                        <img src="couponia/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
                                     </a>
                                     <div class="thumb-list-item-caption">
                                         <p class="thumb-list-item-meta">Jul 18, 2014</p>
@@ -73,7 +73,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
+                                        <img src="couponia/img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
                                     </a>
                                     <div class="thumb-list-item-caption">
                                         <p class="thumb-list-item-meta">Jul 18, 2014</p>
@@ -96,25 +96,25 @@
                             <div class="pull-right">
                                 <ul class="list-inline list-payment">
                                     <li>
-                                        <img src="img/payment/american-express-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                        <img src="couponia/img/payment/american-express-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                     </li>
                                     <li>
-                                        <img src="img/payment/cirrus-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                        <img src="couponia/img/payment/cirrus-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                     </li>
                                     <li>
-                                        <img src="img/payment/discover-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                        <img src="couponia/img/payment/discover-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                     </li>
                                     <li>
-                                        <img src="img/payment/ebay-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                        <img src="couponia/img/payment/ebay-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                     </li>
                                     <li>
-                                        <img src="img/payment/maestro-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                        <img src="couponia/img/payment/maestro-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                     </li>
                                     <li>
-                                        <img src="img/payment/mastercard-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                        <img src="couponia/img/payment/mastercard-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                     </li>
                                     <li>
-                                        <img src="img/payment/visa-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                        <img src="couponia/img/payment/visa-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                     </li>
                                 </ul>
                             </div>
@@ -126,25 +126,24 @@
         <!-- //////////////////////////////////
 	//////////////END MAIN  FOOTER///////// 
 	////////////////////////////////////-->
-
      <!-- Scripts queries -->
-        <script src="js/jquery.js"></script>
-        <script src="js/boostrap.min.js"></script>
-        <script src="js/countdown.min.js"></script>
-        <script src="js/flexnav.min.js"></script>
-        <script src="js/magnific.js"></script>
-        <script src="js/tweet.min.js"></script>
+        <script src="couponia/js/jquery.js"></script>
+        <script src="couponia/js/boostrap.min.js"></script>
+        <script src="couponia/js/countdown.min.js"></script>
+        <script src="couponia/js/flexnav.min.js"></script>
+        <script src="couponia/js/magnific.js"></script>
+        <script src="couponia/js/tweet.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-        <script src="js/fitvids.min.js"></script>
-        <script src="js/mail.min.js"></script>
-        <script src="js/ionrangeslider.js"></script>
-        <script src="js/icheck.js"></script>
-        <script src="js/fotorama.js"></script>
-        <script src="js/card-payment.js"></script>
-        <script src="js/owl-carousel.js"></script>
-        <script src="js/masonry.js"></script>
-        <script src="js/nicescroll.js"></script>
+        <script src="couponia/js/fitvids.min.js"></script>
+        <script src="couponia/js/mail.min.js"></script>
+        <script src="couponia/js/ionrangeslider.js"></script>
+        <script src="couponia/js/icheck.js"></script>
+        <script src="couponia/js/fotorama.js"></script>
+        <script src="couponia/js/card-payment.js"></script>
+        <script src="couponia/js/owl-carousel.js"></script>
+        <script src="couponia/js/masonry.js"></script>
+        <script src="couponia/js/nicescroll.js"></script>
 
         <!-- Custom scripts -->
-        <script src="js/custom.js"></script>
-        <script src="js/switcher.js"></script>
+        <script src="couponia/js/custom.js"></script>
+        <script src="couponia/js/switcher.js"></script>

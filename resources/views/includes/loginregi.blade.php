@@ -3,18 +3,19 @@
             <i class="fa fa-sign-in dialog-icon"></i>
             <h3>Member Login</h3>
             <h5>Welcome back, friend. Login to get started</h5>
-            <form class="dialog-form">
+            <form class="dialog-form" action="{{ route('login') }}" method="POST">
+            {{ csrf_field() }}
                 <div class="form-group">
                     <label>E-mail</label>
-                    <input type="text" placeholder="email@domain.com" class="form-control">
+                    <input type="text" name="email" placeholder="email@domain.com" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" placeholder="My secret password" class="form-control">
+                    <input type="password" name="password" placeholder="My secret password" class="form-control">
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox">Remember me
+                        <input type="checkbox" name="remember">Remember me
                     </label>
                 </div>
                 <input type="submit" value="Sign in" class="btn btn-primary">
