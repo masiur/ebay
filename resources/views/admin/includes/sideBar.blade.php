@@ -29,9 +29,6 @@
                         </ul>
                     </li>
 
-
-
-
                     <li class="has-submenu"><a href="#"><i class="ion-compose"></i> <span class="nav-label">Category</span></a>
                         <ul class="list-unstyled">
                             <li><a href="{{ route('category.index') }}">Category List</a></li>
@@ -40,6 +37,13 @@
                         </ul>
                     </li>
 
+                    <li class="has-submenu"><a href="#"><i class="ion-compose"></i> <span class="nav-label">Sub Category</span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ route('subCategory.index') }}">Subcategory List</a></li>
+                            <li><a href="{{ route('subCategory.create') }}">Add Subcategory</a></li>
+
+                        </ul>
+                    </li>
 
                     <li class="has-submenu"><a href="#"><i class="ion-grid"></i> <span class="nav-label">Data Tables</span></a>
                         <ul class="list-unstyled">
@@ -49,7 +53,6 @@
                         </ul>
                     </li>
 
-
                     <li class="has-submenu"><a href="#"><i class="ion-stats-bars"></i> <span class="nav-label">Charts</span><span class="badge bg-purple">1</span></a>
                         <ul class="list-unstyled">
                             <li><a href="#">chart</a></li>
@@ -57,7 +60,6 @@
 
                         </ul>
                     </li>
-
 
                     <li class="has-submenu"><a href="#"><i class="ion-email"></i> <span class="nav-label">Mail</span></a>
                         <ul class="list-unstyled">
