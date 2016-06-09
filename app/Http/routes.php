@@ -23,8 +23,8 @@ Route::get('/home', function () {
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'Auth\AuthController@login']);
-	Route::get('user/create', ['as'=>'user.create','uses' => 'UsersController@create']);
-	Route::post('user/store', ['as'=>'user.store','uses' => 'UsersController@store']);
+	Route::get('user/create', ['as'=>'user.create','uses' => 'UserController@create']);
+	Route::post('user/store', ['as'=>'user.store','uses' => 'UserController@store']);
 	Route::post('login', array('uses' => 'Auth\AuthController@doLogin'));
 
 
@@ -40,7 +40,7 @@ Route::group(array('middleware' => 'auth'), function()
 {
 
 	Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
-	Route::get('profile', ['as' => 'profile', 'uses' => 'UsersController@profile']);
+	Route::get('profile', ['as' => 'profile', 'uses' => 'UserController@profile']);
 	// Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
 	Route::get('change-password', array('as' => 'password.change', 'uses' => 'Auth\AuthController@changePassword'));
 	Route::post('change-password', array('as' => 'password.doChange', 'uses' => 'Auth\AuthController@doChangePassword'));

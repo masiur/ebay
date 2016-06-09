@@ -86,13 +86,13 @@
 
 </body>
 <!-- js placed at the end of the document so the pages load faster -->
-{!! HTML::script('js/jquery.js') !!}
-{!! HTML::script('js/bootstrap.min.js') !!}
-{!! HTML::script('js/pace.min.js') !!}
-{!! HTML::script('js/wow.min.js') !!}
-{!! HTML::script('js/jquery.nicescroll.js') !!}
+{!! Html::script('js/jquery.js') !!}
+{!! Html::script('js/bootstrap.min.js') !!}
+{!! Html::script('js/pace.min.js') !!}
+{!! Html::script('js/wow.min.js') !!}
+{!! Html::script('js/jquery.nicescroll.js') !!}
 
         <!--common script for all pages-->
-{!! HTML::script('js/jquery.app.js') !!}
+{!! Html::script('js/jquery.app.js') !!}
 
 </html>
