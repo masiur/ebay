@@ -29,6 +29,6 @@ class Member extends Model
     }
 
     public function buyer(){
-        return $this->hasMany('App\Member', 'buyer_id', 'id');
+        return $this->hasMany('App\Message', 'buyer_id', 'id');
     }
 }
