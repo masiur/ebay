@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('admin.layouts.default')
     @section('content')
         @include('includes.alert')
         <h1>Welcome :)</h1>

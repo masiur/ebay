@@ -46,12 +46,17 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::post('change-password', array('as' => 'password.doChange', 'uses' => 'Auth\AuthController@doChangePassword'));
 
 
+	Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function()
+	{
+		Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
+	});
+
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function()
-{
-	Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
-});
+// Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function()
+// {
+// 	Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
+// });
 
 
 

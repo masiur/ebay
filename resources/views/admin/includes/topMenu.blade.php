@@ -40,9 +40,9 @@
 
                     <ul class="nav navbar-nav navbar-right top-menu top-right-menu">
 
-                        @include('includes.notificationMenu')
-                        @include('includes.inboxMenu')
-                        @include('includes.profileMenu')
+                        @include('admin.includes.notificationMenu')
+                        @include('admin.includes.inboxMenu')
+                        @include('admin.includes.profileMenu')
 
                     </ul>
                     <!-- End right navbar -->
