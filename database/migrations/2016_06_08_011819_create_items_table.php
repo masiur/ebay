@@ -26,7 +26,7 @@ class CreateItemsTable extends Migration
 
 
             $table->foreign('seller_id')
-                ->references('id')->on('users')
+                ->references('id')->on('members')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 

@@ -24,17 +24,17 @@ class CreateMessagesTable extends Migration
 
 
             $table->foreign('buyer_id')
-                ->references('id')->on('users')
+                ->references('id')->on('members')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
             $table->foreign('seller_id')
-                ->references('id')->on('users')
+                ->references('id')->on('members')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
             $table->foreign('receiver_id')
-                ->references('id')->on('users')
+                ->references('id')->on('members')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
