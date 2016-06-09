@@ -10,14 +10,14 @@
    
     @include('includes.toparea')
     @include('includes.navmenu')
-    @include('includes.loginregi')
+   {{-- @include('includes.loginregi') --}} 
     @include('includes.searcharea')
 
 
     <!-- loginregi -->
     <!-- toparea -->
     <!-- searcharea -->
-    <div class="gap"></div>
+    <!-- <div class="gap"></div> -->
 
             <!-- //////////////////////////////////
     //////////////END MAIN HEADER////////// 

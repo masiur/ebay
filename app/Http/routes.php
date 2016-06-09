@@ -23,7 +23,7 @@ Route::get('/home', function () {
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'Auth\AuthController@login']);
-	Route::get('user/create', ['as'=>'user.create','uses' => 'UserController@create']);
+	Route::get('register', ['as'=>'user.create','uses' => 'UserController@create']);
 	Route::post('user/store', ['as'=>'user.store','uses' => 'UserController@store']);
 	Route::post('login', array('uses' => 'Auth\AuthController@doLogin'));
 

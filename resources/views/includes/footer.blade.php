@@ -3,7 +3,7 @@
 	////////////////////////////////////-->
 
         <footer class="main" id="main-footer">
-            <div class="footer-top-area">
+            <!-- <div class="footer-top-area">
                 <div class="container">
                     <div class="row row-wrap">
                         <div class="col-md-3">
@@ -43,11 +43,11 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <h4>Couponia on Twitter</h4>
+                            <h4>Couponia on Twitter</h4> -->
                             <!-- START TWITTER -->
-                            <div class="twitter-ticker" id="twitter-ticker"></div>
+                            <!-- <div class="twitter-ticker" id="twitter-ticker"></div> -->
                             <!-- END TWITTER -->
-                        </div>
+                       <!--  </div>
                         <div class="col-md-3">
                             <h4>Recent News</h4>
                             <ul class="thumb-list">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="footer-copyright">
                 <div class="container">
                     <div class="row">
