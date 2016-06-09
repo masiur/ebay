@@ -2,7 +2,7 @@
 <html lang="en">
 
 @include('includes.header')
-<body class="boxed" style="background-image: url(couponia/img/textures/wood-1.jpg)">
+<body class="wide" style="background-image: url(couponia/img/textures/wood-1.jpg)">
 
 
     <div class="global-wrap">
@@ -10,14 +10,14 @@
    
     @include('includes.toparea')
     @include('includes.navmenu')
-    @include('includes.loginregi')
+   {{-- @include('includes.loginregi') --}} 
     @include('includes.searcharea')
 
 
     <!-- loginregi -->
     <!-- toparea -->
     <!-- searcharea -->
-    <div class="gap"></div>
+    <!-- <div class="gap"></div> -->
 
             <!-- //////////////////////////////////
     //////////////END MAIN HEADER////////// 

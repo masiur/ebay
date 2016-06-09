@@ -1,140 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.default')
+    @section('content')
 
-
-
-@include('admin.includes.header')
-
-
-
-<body>
-
-<div class="wrapper-page animated fadeInDown">
-    <div class="panel panel-color panel-primary">
-        <div class="panel-heading">
-            <h3 class="text-center m-t-10"> Sign In to <strong>Ebay </strong> </h3>
-        </div>
-        <br>
-             @include('includes.alert')
-
-            {!! Form::open(array('route' => 'login', 'method' => 'post', 'class' => 'form-horizontal m-t-40')) !!}
-            <div class="form-group ">
-                <div class="col-xs-12">
-                    {!! Form::text('email', '', array('class' => 'form-control', 'placeholder' => 'Email Address', 'type'=>'text','autofocus')) !!}
+                <!-- LOGIN REGISTER LINKS CONTENT -->
+        <div id="login-dialog" class="mfp-with-anim  mfp-dialog clearfix">
+            <i class="fa fa-sign-in dialog-icon"></i>
+            <h3>Member Login</h3>
+            <h5>Welcome back, friend. Login to get started</h5>
+            <form class="dialog-form" action="{{ url('login') }}" method="POST">
+            @include('includes.alert')
+            {{ csrf_field() }}
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="text" name="email" placeholder="email@domain.com" class="form-control">
                 </div>
-            </div>
-
-            <div class="form-group ">
-
-                <div class="col-xs-12">
-                    {!! Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password','type'=>'text')) !!}
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="My secret password" class="form-control">
                 </div>
-            </div>
-
-
-
-        <div class="form-group m-t-30">
-
-                <div class="col-sm-5 ">
-                    <label class="cr-styled">
-                        <input type="checkbox" checked>
-                        <i class="fa"></i>
-                        Remember me
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="remember">Remember me
                     </label>
                 </div>
-
-
-            <div class="col-sm-7 text-right">
-                <a data-toggle="modal" href="#myModal"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
-            </div>
-
+                <input type="submit" value="Sign in" class="btn btn-primary">
+            </form>
+            <ul class="dialog-alt-links">
+                <li><a  href="{{ route('user.create') }}" data-effect="mfp-zoom-out">Not member yet</a>
+                </li>
+                <li><a class="popup-text" href="#password-recover-dialog" data-effect="mfp-zoom-out">Forgot password</a>
+                </li>
+            </ul>
         </div>
 
-        <div class="form-group text-right">
-            <br>
-                 <div class="col-xs-12">
-                    {!! Form::submit('Log in', array('class' => 'btn btn-lg btn-login btn-block btn-purple ', 'type'=>'submit')) !!}
+
+        <div id="register-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
+            <i class="fa fa-edit dialog-icon"></i>
+            <h3>Member Register</h3>
+            <h5>Ready to get best offers? Let's get started!</h5>
+            <form class="dialog-form">
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="text" placeholder="email@domain.com" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="My secret password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Repeat Password</label>
+                    <input type="password" placeholder="Type your password again" class="form-control">
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label>Your Area</label>
+                            <input type="password" placeholder="Boston" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Postal/Zip</label>
+                            <input type="password" placeholder="12345" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">Get hot offers via e-mail
+                    </label>
+                </div>
+                <input type="submit" value="Sign up" class="btn btn-primary">
+            </form>
+            <ul class="dialog-alt-links">
+                <li><a class="popup-text" href="#login-dialog" data-effect="mfp-zoom-out">Already member</a>
+                </li>
+            </ul>
         </div>
 
 
-
-
-
-
-
-        <center>
-        <p>or you can sign in via social network</p>
-
-        <div class="login-social-link">
-            <a href="{{ route('login/fb') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
-       <!-- <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i>Twitter</a> -->
-            <a href="{{ route('login/gp') }}" class="btn btn-danger"><i class="fa fa-google-plus"></i> Google</a>
+        <div id="password-recover-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
+            <i class="icon-retweet dialog-icon"></i>
+            <h3>Password Recovery</h3>
+            <h5>Fortgot your password? Don't worry we can deal with it</h5>
+            <form class="dialog-form">
+                <label><b>E-mail</b></label>
+                <input type="text" placeholder=" email@domain.com"  class="span12 form-control">
+                <input type="submit" value="Request new password" class="btn btn-primary">
+            </form>
         </div>
-       </center>
+        <!-- END LOGIN REGISTER LINKS CONTENT -->
 
-
-
-        <div class="registration">
-            <br>
-            Don't have an account yet?
-            <a class="" href="{{ route('user.create') }}">
-                Create an account
-            </a>
-        </div>
-
-
-        {!! Form::close() !!}
-
-    </div>
-</div>
-
-
-
-
-
-
-<!-- Modal -->
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Forgot Password ?</h4>
-            </div>
-            <div class="modal-body">
-                <p>Enter your e-mail address below to reset your password.</p>
-
-
-                {!! Form::open(array('action' => 'RemindersController@postRemind', 'method' => 'post')) !!}
-
-                {!! Form::email('email', '', array('class' => 'form-control placeholder-no-fix', 'placeholder' => 'Email Address', 'autocomplete'=>'off')) !!}
-
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-
-                {!! Form::submit('Submit', array('class' => 'btn btn-success')) !!}
-                {!! Form::close() !!}
-            </div>
-        </div>
-    </div>
-</div>
-<!-- modal -->
-
-
-
-
-
-</body>
-<!-- js placed at the end of the document so the pages load faster -->
-{!! Html::script('js/jquery.js') !!}
-{!! Html::script('js/bootstrap.min.js') !!}
-{!! Html::script('js/pace.min.js') !!}
-{!! Html::script('js/wow.min.js') !!}
-{!! Html::script('js/jquery.nicescroll.js') !!}
-
-        <!--common script for all pages-->
-{!! Html::script('js/jquery.app.js') !!}
-
-</html>
+@stop
