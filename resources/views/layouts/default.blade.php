@@ -2,7 +2,7 @@
 <html lang="en">
 
 @include('includes.header')
-<body class="boxed" style="background-image: url(couponia/img/textures/wood-1.jpg)">
+<body class="wide" style="background-image: url(couponia/img/textures/wood-1.jpg)">
 
 
     <div class="global-wrap">

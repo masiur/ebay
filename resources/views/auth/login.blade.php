@@ -1,6 +1,5 @@
 @extends('layouts.default')
     @section('content')
-        @include('includes.alert')
 
                 <!-- LOGIN REGISTER LINKS CONTENT -->
         <div id="login-dialog" class="mfp-with-anim  mfp-dialog clearfix">
@@ -8,6 +7,7 @@
             <h3>Member Login</h3>
             <h5>Welcome back, friend. Login to get started</h5>
             <form class="dialog-form" action="{{ url('login') }}" method="POST">
+            @include('includes.alert')
             {{ csrf_field() }}
                 <div class="form-group">
                     <label>E-mail</label>
@@ -25,7 +25,7 @@
                 <input type="submit" value="Sign in" class="btn btn-primary">
             </form>
             <ul class="dialog-alt-links">
-                <li><a class="popup-text" href="#register-dialog" data-effect="mfp-zoom-out">Not member yet</a>
+                <li><a  href="{{ route('user.create') }}" data-effect="mfp-zoom-out">Not member yet</a>
                 </li>
                 <li><a class="popup-text" href="#password-recover-dialog" data-effect="mfp-zoom-out">Forgot password</a>
                 </li>
@@ -83,8 +83,8 @@
             <h3>Password Recovery</h3>
             <h5>Fortgot your password? Don't worry we can deal with it</h5>
             <form class="dialog-form">
-                <label>E-mail</label>
-                <input type="text" placeholder="email@domain.com" class="span12">
+                <label><b>E-mail</b></label>
+                <input type="text" placeholder=" email@domain.com"  class="span12 form-control">
                 <input type="submit" value="Request new password" class="btn btn-primary">
             </form>
         </div>

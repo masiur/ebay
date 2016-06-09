@@ -253,10 +253,17 @@
                                     </ul>
                                 </div>
                             </li>
+                            @if(!Auth::check())
                             <li><a  href="{{ route('login') }}" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>Sign in</a>
                             </li>
                             <li><a  href="{{ route('user.create') }}" data-effect="mfp-move-from-top"><i class="fa fa-edit"></i>Sign up</a>
                             </li>
+                            @else
+                            <li><a  href="{{ route('profile') }}" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>My Profile</a>
+                            </li>
+                            <li><a  href="{{ route('logout') }}" data-effect="mfp-move-from-top"><i class="fa fa-edit"></i>Logout</a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
