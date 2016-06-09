@@ -3,7 +3,7 @@
 
 
 
-@include('includes.header')
+@include('admin.includes.header')
 
 
 
@@ -12,7 +12,7 @@
 <div class="wrapper-page animated fadeInDown">
     <div class="panel panel-color panel-primary">
         <div class="panel-heading">
-            <h3 class="text-center m-t-10"> Sign In to <strong>Template (5.1) </strong> </h3>
+            <h3 class="text-center m-t-10"> Sign In to <strong>Ebay </strong> </h3>
         </div>
         <br>
              @include('includes.alert')
@@ -128,13 +128,13 @@
 
 </body>
 <!-- js placed at the end of the document so the pages load faster -->
-{!! HTML::script('js/jquery.js') !!}
-{!! HTML::script('js/bootstrap.min.js') !!}
-{!! HTML::script('js/pace.min.js') !!}
-{!! HTML::script('js/wow.min.js') !!}
-{!! HTML::script('js/jquery.nicescroll.js') !!}
+{!! Html::script('js/jquery.js') !!}
+{!! Html::script('js/bootstrap.min.js') !!}
+{!! Html::script('js/pace.min.js') !!}
+{!! Html::script('js/wow.min.js') !!}
+{!! Html::script('js/jquery.nicescroll.js') !!}
 
         <!--common script for all pages-->
-{!! HTML::script('js/jquery.app.js') !!}
+{!! Html::script('js/jquery.app.js') !!}
 
 </html>

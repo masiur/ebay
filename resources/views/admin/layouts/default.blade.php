@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('includes.header')
+@include('admin.includes.header')
 
 <body>
 
-@include('includes.sideBar')
+@include('admin.includes.sideBar')
 
 
-@include('includes.topMenu')
+@include('admin.includes.topMenu')
 
 
 <div class="wraper container-fluid">
@@ -18,7 +18,7 @@
 </div>
 
 
-@include('includes.footer')
+@include('admin.includes.footer')
 
 </body>
 </html>

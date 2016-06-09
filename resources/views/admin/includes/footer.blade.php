@@ -1,6 +1,7 @@
 <!-- Footer Start -->
 <footer class="footer">
-	Copyright &copy; 2016InfancyIT, Bangladesh. All rights reserved.
+	<center>
+	Copyright&copy; 2016 InfancyIT, Bangladesh. All rights reserved.</center>
 </footer>
 <!-- Footer Ends -->
 

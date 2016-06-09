@@ -103,7 +103,7 @@ class AuthController extends Controller
             {
                 return redirect()->intended('admin/dashboard');
             } else if(Auth::attempt([ 'username' => $allInput['email'], 'password' => $allInput['password'] ])) {
-                return redirect()->intended('admin/dashboard');
+                return redirect()->intended('admin/dashboard'); // works with route url
             } else
             {
                 return redirect()->route('login')
@@ -122,7 +122,7 @@ class AuthController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard')
+        return view('admin.dashboard')
                     ->with('title','Dashboard')->with('user', Auth::user());
         // return 'Dashboard';
     }
