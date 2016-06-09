@@ -49,9 +49,33 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function()
 	{
 		Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
+
+	// Category CRUD
+	Route::get('category',['as' => 'category.index', 'uses' => 'CategoryController@index']);
+	Route::get('category/create',['as' => 'category.create', 'uses' => 'CategoryController@create']);
+	Route::post('category',['as' => 'category.store', 'uses' => 'CategoryController@store']);
+	Route::get('category/{id}/edit',['as' => 'category.edit', 'uses' => 'CategoryController@edit']);
+	Route::get('category/{id}/show',['as' => 'category.show', 'uses' => 'CategoryController@show']);
+	Route::put('category/{id}',['as' => 'category.update', 'uses' => 'CategoryController@update']);
+	Route::delete('category/{id}',['as' => 'category.delete', 'uses' => 'CategoryController@destroy']);
 	});
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function()
 // {
