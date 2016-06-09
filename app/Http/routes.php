@@ -66,6 +66,15 @@ Route::group(array('middleware' => 'auth'), function()
 		Route::get('subCategory/{id}/show',['as' => 'subCategory.show', 'uses' => 'SubCategoryController@show']);
 		Route::put('subCategory/{id}',['as' => 'subCategory.update', 'uses' => 'SubCategoryController@update']);
 		Route::delete('subCategory/{id}',['as' => 'subCategory.delete', 'uses' => 'SubCategoryController@destroy']);
+
+		// SubCategory CRUD
+		Route::get('package',['as' => 'package.index', 'uses' => 'PackageController@index']);
+		Route::get('package/create',['as' => 'package.create', 'uses' => 'PackageController@create']);
+		Route::post('package',['as' => 'package.store', 'uses' => 'PackageController@store']);
+		Route::get('package/{id}/edit',['as' => 'package.edit', 'uses' => 'PackageController@edit']);
+		Route::get('package/{id}/show',['as' => 'package.show', 'uses' => 'PackageController@show']);
+		Route::put('package/{id}',['as' => 'package.update', 'uses' => 'PackageController@update']);
+		Route::delete('package/{id}',['as' => 'package.delete', 'uses' => 'PackageController@destroy']);
 	});
 
 });

@@ -6,8 +6,6 @@
         <div class="page-title"> 
             <h3 class="title">{!!$title!!}</h3> 
         </div>
-        <!-- Masiur Rahman Siddiki -->
-        @if (count($categories))
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="panel panel-default">
@@ -18,7 +16,7 @@
                                     <!-- <h4>{{ $title }}</h4> -->
                             </div>
                             <div class="col-md-6">                            
-                                <a class="pull-right" href="{!! route('subCategory.index')!!}"><button class="btn btn-success">Sub Category List</button></a>
+                                <a class="pull-right" href="{!! route('package.index')!!}"><button class="btn btn-success">Package List</button></a>
                             </div>
                         </div>
                     </div>
@@ -27,20 +25,27 @@
                             
                                 <div class=" form"> 
 
-                                    {!! Form::open(array('route' => 'subCategory.store' , 'method' => 'post', 'class' => 'cmxform form-horizontal tasi-form')) !!}
+                                    {!! Form::open(array('route' => 'package.store' , 'method' => 'post', 'class' => 'cmxform form-horizontal tasi-form')) !!}
 
 
                                     <div class="form-group">
-                                        {!! Form::label('name', "Sub Category Name*", array('class' => 'control-label col-lg-2')) !!}
+                                        {!! Form::label('title', "Package title*", array('class' => 'control-label col-lg-2')) !!}
                                         <div class="col-lg-6">
-                                            {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Enter Category Name', 'required' => 'required', 'aria-required' =>'true')) !!}
+                                            {!! Form::text('title', null, array('class' => 'form-control', 'placeholder' => 'Enter Package Title', 'required' => 'required', 'aria-required' =>'true')) !!}
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        {!! Form::label('category_id', "Category Name*", array('class' => 'control-label col-lg-2')) !!}
+                                        {!! Form::label('monthly_fee', "Monthly Fee*", array('class' => 'control-label col-lg-2')) !!}
                                         <div class="col-lg-6">
-                                            {!! Form::select('category_id', $categories, null, array('class' => 'form-control', 'required' => 'required')) !!}
+                                            {!! Form::text('monthly_fee', null, array('class' => 'form-control','placeholder' => 'Amount of Monthly Fee', 'required' => 'required')) !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::label('sales_limit', "Sales Limit*", array('class' => 'control-label col-lg-2')) !!}
+                                        <div class="col-lg-6">
+                                            {!! Form::text('sales_limit', null, array('class' => 'form-control', 'placeholder' => 'Sales Limit', 'required' => 'required', 'aria-required' =>'true')) !!}
                                         </div>
                                     </div>
 
@@ -59,9 +64,6 @@
             </div>
 
         </div>
-        @else
-        First You have to Create  <a class="btn btn-info" href="{{ route('category.create') }}">Category</a>
-        @endif
 
 @stop
 

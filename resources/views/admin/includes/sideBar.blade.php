@@ -45,10 +45,10 @@
                         </ul>
                     </li>
 
-                    <li class="has-submenu"><a href="#"><i class="ion-grid"></i> <span class="nav-label">Data Tables</span></a>
+                    <li class="has-submenu"><a href="#"><i class="ion-grid"></i> <span class="nav-label">Package</span></a>
                         <ul class="list-unstyled">
-                            <li><a href="#">Basic Tables</a></li>
-                            <li><a href="#">Data Table</a></li>
+                            <li><a href="{{ route('package.index') }}">All Package</a></li>
+                            <li><a href="{{ route('package.create') }}">Create Package</a></li>
 
                         </ul>
                     </li>

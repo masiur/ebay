@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Subcategory;
-use App\Category;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Package;
 use Validator;
-class SubCategoryController extends Controller
+class PackageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +17,10 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        $subcategories = Subcategory::all();
-        return view('admin.subcategory.index')
-                        ->with('title', 'List of all Sub Categories')
-                        ->with('subcategories', $subcategories);
+        $packages = Package::all();
+        return view('admin.package.index')
+                        ->with('title', 'List of all Package')
+                        ->with('packages', $packages);
     }
 
     /**
@@ -31,10 +30,8 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::lists('name', 'id');
-        return view('admin.subcategory.create')
-                        ->with('title', 'Add Subcategory')
-                        ->with('categories', $categories);
+        return view('admin.package.create')
+                        ->with('title', 'Add Package');
     }
 
     /**
@@ -46,8 +43,9 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required',
-            'category_id' => 'required'
+            'title' => 'required',
+            'monthly_fee' => 'required|numeric',
+            'sales_limit' => 'required|numeric'
             ];
 
         $data = $request->all();
@@ -57,13 +55,14 @@ class SubCategoryController extends Controller
             return redirect()->back()->withInput()->withErrors($validation);
         }
 
-        $subcategory = new Subcategory();
-        $subcategory->name = $data['name'];
-        $subcategory->category_id = $data['category_id'];
-        if($subcategory->save()) {
-            return redirect()->route('subCategory.index')->with('success','SubCategory Successfully Added');
+        $package = new Package();
+        $package->title = $data['title'];
+        $package->monthly_fee = $data['monthly_fee'];
+        $package->sales_limit = $data['sales_limit'];
+        if($package->save()) {
+            return redirect()->route('package.index')->with('success','package Successfully Added');
         } else {
-            return redirect()->route('subCategory.index')->with('error','Something went wrong. Try again');
+            return redirect()->route('package.index')->with('error','Something went wrong');
         }
     }
 
@@ -86,12 +85,10 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::lists('name', 'id');
-        $subcategory = Subcategory::findOrFail($id);
-        return view('admin.subcategory.edit')
-                        ->with('title', 'Edit SubCategory')
-                        ->with('categories', $categories)
-                        ->with('subcategory', $subcategory);
+        $package = Package::findOrFail($id);
+        return view('admin.package.edit')
+                        ->with('title', 'Edit Package')
+                        ->with('package', $package);
     }
 
     /**
@@ -104,8 +101,9 @@ class SubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'name' => 'required',
-            'category_id' => 'required'
+            'title' => 'required',
+            'monthly_fee' => 'required|numeric',
+            'sales_limit' => 'required|numeric'
             ];
 
         $data = $request->all();
@@ -115,13 +113,14 @@ class SubCategoryController extends Controller
             return redirect()->back()->withInput()->withErrors($validation);
         }
 
-        $subcategory = Subcategory::findOrFail($id);
-        $subcategory->name = $data['name'];
-        $subcategory->category_id = $data['category_id'];
-        if($subcategory->save()) {
-            return redirect()->route('subCategory.index')->with('success','SubCategory Successfully Updated');
+        $package = Package::findOrFail($id);
+        $package->title = $data['title'];
+        $package->monthly_fee = $data['monthly_fee'];
+        $package->sales_limit = $data['sales_limit'];
+        if($package->save()) {
+            return redirect()->route('package.index')->with('success','Package Successfully Updated');
         } else {
-            return redirect()->route('subCategory.index')->with('error','Something went wrong. Try again');
+            return redirect()->route('package.index')->with('error','Something went wrong');
         }
     }
 
@@ -134,12 +133,12 @@ class SubCategoryController extends Controller
     public function destroy($id)
     {
         try{
-            Subcategory::destroy($id);
+            Package::destroy($id);
 
-            return redirect()->route('subCategory.index')->with('success','SubCategory Deleted Successfully.');
+            return redirect()->route('package.index')->with('success','Package Deleted Successfully.');
 
         }catch(Exception $ex){
-            return redirect()->route('subCategory.index')->with('error','Something went wrong. Try Again.');
+            return redirect()->route('package.index')->with('error','Something went wrong.Try Again.');
         }
     }
 }
