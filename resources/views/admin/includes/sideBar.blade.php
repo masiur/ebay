@@ -32,10 +32,10 @@
 
 
 
-                    <li class="has-submenu"><a href="#"><i class="ion-compose"></i> <span class="nav-label">Forms</span></a>
+                    <li class="has-submenu"><a href="#"><i class="ion-compose"></i> <span class="nav-label">Category</span></a>
                         <ul class="list-unstyled">
-                            <li><a href="#">General Elements</a></li>
-                            <li><a href="#">Form Validation</a></li>
+                            <li><a href="{{ route('category.index') }}">Category List</a></li>
+                            <li><a href="{{ route('category.create') }}">Add Category</a></li>
 
                         </ul>
                     </li>
