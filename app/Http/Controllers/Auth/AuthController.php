@@ -101,9 +101,17 @@ class AuthController extends Controller
 
             if (Auth::attempt($credentials))
             {
-                return redirect()->intended('admin/dashboard');
+                if(Auth::user()->hasRole('admin')) {
+                    return redirect()->intended('admin/dashboard'); // works with route url
+                } else {
+                    return redirect()->to('/');
+                }
             } else if(Auth::attempt([ 'username' => $allInput['email'], 'password' => $allInput['password'] ])) {
-                return redirect()->intended('admin/dashboard'); // works with route url
+                if(Auth::user()->hasRole('admin')) {
+                    return redirect()->intended('admin/dashboard'); // works with route url
+                } else {
+                    return redirect()->to('/');
+                }
             } else
             {
                 return redirect()->route('login')

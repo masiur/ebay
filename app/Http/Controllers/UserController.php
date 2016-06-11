@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Validator;
 use Auth;
+use App\Member;
 use Hash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -45,8 +46,11 @@ class UserController extends Controller
             'name'                  => 'required',
             'email'                 => 'required|unique:users,email',
             'password'              => 'required|confirmed',
-            'password_confirmation' => 'required'
+            'password_confirmation' => 'required',
+            'address'               => 'required',
+            'phone'                 => 'required'
         ];
+
         $data = $request->all();
 
         $validation = Validator::make($data,$rules);
@@ -55,16 +59,22 @@ class UserController extends Controller
             return redirect()->back()->withErrors($validation)->withInput();
         }else{
             $user = new User;
-            $user->name = $data['name'];
             $user->email = $data['email'];
             $user->password = Hash::make($data['password']);
 
             if($user->save()){
+                $member = new Member();
+                $member->user_id = $user->id;
+                $member->name = $data['name'];
+                $member->address = $data['address'];
+                $member->phone = $data['phone'];
+                $member->save();
+
                 Auth::logout();
                 return redirect()->route('login')
                             ->with('success','Registered successfully. Sign In Now.');
             }else{
-                return redirect()->route('dashboard')
+                return redirect()->route('user.create')
                             ->with('error',"Something went wrong.Please Try again.");
             }
         }

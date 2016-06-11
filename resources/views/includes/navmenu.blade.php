@@ -6,7 +6,7 @@
                         <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                         <nav>
                             <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
-                                <li class="active"><a href="index.html">Home</a>
+                                <li class="active"><a href="{{ url('home') }}">Home</a>
                                     <ul>
                                         <li><a href="index-shop-layout-1.html">Shop Layout</a>
                                             <ul>
@@ -253,10 +253,17 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>Sign in</a>
+                            @if(!Auth::check())
+                            <li><a  href="{{ route('login') }}" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>Sign in</a>
                             </li>
-                            <li><a class="popup-text" href="#register-dialog" data-effect="mfp-move-from-top"><i class="fa fa-edit"></i>Sign up</a>
+                            <li><a  href="{{ route('user.create') }}" data-effect="mfp-move-from-top"><i class="fa fa-edit"></i>Sign up</a>
                             </li>
+                            @else
+                            <li><a  href="{{ route('profile') }}" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>My Profile</a>
+                            </li>
+                            <li><a  href="{{ route('logout') }}" data-effect="mfp-move-from-top"><i class="fa fa-edit"></i>Logout</a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
                 </div>

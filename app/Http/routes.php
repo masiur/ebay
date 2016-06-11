@@ -23,7 +23,7 @@ Route::get('/home', function () {
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'Auth\AuthController@login']);
-	Route::get('user/create', ['as'=>'user.create','uses' => 'UserController@create']);
+	Route::get('register', ['as'=>'user.create','uses' => 'UserController@create']);
 	Route::post('user/store', ['as'=>'user.store','uses' => 'UserController@store']);
 	Route::post('login', array('uses' => 'Auth\AuthController@doLogin'));
 
@@ -33,7 +33,6 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::get('login/gp', ['as'=>'login/gp','uses' => 'SocialController@loginWithGoogle']);
 
 });
-
 
 
 Route::group(array('middleware' => 'auth'), function()
@@ -50,14 +49,32 @@ Route::group(array('middleware' => 'auth'), function()
 	{
 		Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
 
-	// Category CRUD
-	Route::get('category',['as' => 'category.index', 'uses' => 'CategoryController@index']);
-	Route::get('category/create',['as' => 'category.create', 'uses' => 'CategoryController@create']);
-	Route::post('category',['as' => 'category.store', 'uses' => 'CategoryController@store']);
-	Route::get('category/{id}/edit',['as' => 'category.edit', 'uses' => 'CategoryController@edit']);
-	Route::get('category/{id}/show',['as' => 'category.show', 'uses' => 'CategoryController@show']);
-	Route::put('category/{id}',['as' => 'category.update', 'uses' => 'CategoryController@update']);
-	Route::delete('category/{id}',['as' => 'category.delete', 'uses' => 'CategoryController@destroy']);
+		// Category CRUD
+		Route::get('category',['as' => 'category.index', 'uses' => 'CategoryController@index']);
+		Route::get('category/create',['as' => 'category.create', 'uses' => 'CategoryController@create']);
+		Route::post('category',['as' => 'category.store', 'uses' => 'CategoryController@store']);
+		Route::get('category/{id}/edit',['as' => 'category.edit', 'uses' => 'CategoryController@edit']);
+		Route::get('category/{id}/show',['as' => 'category.show', 'uses' => 'CategoryController@show']);
+		Route::put('category/{id}',['as' => 'category.update', 'uses' => 'CategoryController@update']);
+		Route::delete('category/{id}',['as' => 'category.delete', 'uses' => 'CategoryController@destroy']);
+
+		// SubCategory CRUD
+		Route::get('subCategory',['as' => 'subCategory.index', 'uses' => 'SubCategoryController@index']);
+		Route::get('subCategory/create',['as' => 'subCategory.create', 'uses' => 'SubCategoryController@create']);
+		Route::post('subCategory',['as' => 'subCategory.store', 'uses' => 'SubCategoryController@store']);
+		Route::get('subCategory/{id}/edit',['as' => 'subCategory.edit', 'uses' => 'SubCategoryController@edit']);
+		Route::get('subCategory/{id}/show',['as' => 'subCategory.show', 'uses' => 'SubCategoryController@show']);
+		Route::put('subCategory/{id}',['as' => 'subCategory.update', 'uses' => 'SubCategoryController@update']);
+		Route::delete('subCategory/{id}',['as' => 'subCategory.delete', 'uses' => 'SubCategoryController@destroy']);
+
+		// SubCategory CRUD
+		Route::get('package',['as' => 'package.index', 'uses' => 'PackageController@index']);
+		Route::get('package/create',['as' => 'package.create', 'uses' => 'PackageController@create']);
+		Route::post('package',['as' => 'package.store', 'uses' => 'PackageController@store']);
+		Route::get('package/{id}/edit',['as' => 'package.edit', 'uses' => 'PackageController@edit']);
+		Route::get('package/{id}/show',['as' => 'package.show', 'uses' => 'PackageController@show']);
+		Route::put('package/{id}',['as' => 'package.update', 'uses' => 'PackageController@update']);
+		Route::delete('package/{id}',['as' => 'package.delete', 'uses' => 'PackageController@destroy']);
 	});
 
 });
