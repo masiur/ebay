@@ -51,7 +51,7 @@
 
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-6">
-                                        {!! Form::submit('Add SubCategory', array('class' => 'btn btn-success')) !!}
+                                        {!! Form::submit('Add Item', array('class' => 'btn btn-success')) !!}
                                         </div>
                                     </div>
 
