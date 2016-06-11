@@ -14,7 +14,7 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('name');
+            $table->text('name');      
             $table->text('description')->nullable();
             $table->integer('category_id')->unsigned();
             $table->integer('subcategory_id')->unsigned()->nullable();
@@ -22,6 +22,7 @@ class CreateItemsTable extends Migration
             $table->double('price');
             $table->integer('amount_in_stock');
             $table->enum('type', ['buy', 'quote']);
+            $table->text('img_url');
             $table->timestamps();
 
 
