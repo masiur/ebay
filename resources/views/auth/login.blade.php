@@ -89,5 +89,6 @@
             </form>
         </div>
         <!-- END LOGIN REGISTER LINKS CONTENT -->
+        <div class="gap"></div>
 
 @stop

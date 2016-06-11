@@ -127,23 +127,23 @@
 	//////////////END MAIN  FOOTER///////// 
 	////////////////////////////////////-->
      <!-- Scripts queries -->
-        <script src="couponia/js/jquery.js"></script>
-        <script src="couponia/js/boostrap.min.js"></script>
-        <script src="couponia/js/countdown.min.js"></script>
-        <script src="couponia/js/flexnav.min.js"></script>
-        <script src="couponia/js/magnific.js"></script>
-        <script src="couponia/js/tweet.min.js"></script>
+        <script src="/couponia/js/jquery.js"></script>
+        <script src="/couponia/js/boostrap.min.js"></script>
+        <script src="/couponia/js/countdown.min.js"></script>
+        <script src="/couponia/js/flexnav.min.js"></script>
+        <script src="/couponia/js/magnific.js"></script>
+        <script src="/couponia/js/tweet.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-        <script src="couponia/js/fitvids.min.js"></script>
-        <script src="couponia/js/mail.min.js"></script>
-        <script src="couponia/js/ionrangeslider.js"></script>
-        <script src="couponia/js/icheck.js"></script>
-        <script src="couponia/js/fotorama.js"></script>
-        <script src="couponia/js/card-payment.js"></script>
-        <script src="couponia/js/owl-carousel.js"></script>
-        <script src="couponia/js/masonry.js"></script>
-        <script src="couponia/js/nicescroll.js"></script>
+        <script src="/couponia/js/fitvids.min.js"></script>
+        <script src="/couponia/js/mail.min.js"></script>
+        <script src="/couponia/js/ionrangeslider.js"></script>
+        <script src="/couponia/js/icheck.js"></script>
+        <script src="/couponia/js/fotorama.js"></script>
+        <script src="/couponia/js/card-payment.js"></script>
+        <script src="/couponia/js/owl-carousel.js"></script>
+        <script src="/couponia/js/masonry.js"></script>
+        <script src="/couponia/js/nicescroll.js"></script>
 
         <!-- Custom scripts -->
-        <script src="couponia/js/custom.js"></script>
-        <script src="couponia/js/switcher.js"></script>
+        <script src="/couponia/js/custom.js"></script>
+        <script src="/couponia/js/switcher.js"></script>

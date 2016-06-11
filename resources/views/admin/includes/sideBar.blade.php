@@ -53,10 +53,10 @@
                         </ul>
                     </li>
 
-                    <li class="has-submenu"><a href="#"><i class="ion-stats-bars"></i> <span class="nav-label">Charts</span><span class="badge bg-purple">1</span></a>
+                    <li class="has-submenu"><a href="#"><i class="ion-stats-bars"></i> <span class="nav-label">Item</span><!-- <span class="badge bg-purple">1</span> --></a>
                         <ul class="list-unstyled">
-                            <li><a href="#">chart</a></li>
-                            <li><a href="#">Morris</a></li>
+                            <li><a href="{{ route('item.index') }}">All Items</a></li>
+                            <li><a href="{{ route('item.create') }}">Add Item</a></li>
 
                         </ul>
                     </li>

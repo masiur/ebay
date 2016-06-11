@@ -11,7 +11,7 @@
     @include('includes.toparea')
     @include('includes.navmenu')
    {{-- @include('includes.loginregi') --}} 
-    @include('includes.searcharea')
+   {{-- @include('includes.searcharea') --}} 
 
 
     <!-- loginregi -->

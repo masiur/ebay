@@ -19,6 +19,7 @@ Route::get('/home', function () {
 	return view('home')->with('title', 'Home');
 });
 
+Route::get('item/details',['as' => 'item', 'uses' => 'ItemController@details']);
 
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
@@ -75,6 +76,15 @@ Route::group(array('middleware' => 'auth'), function()
 		Route::get('package/{id}/show',['as' => 'package.show', 'uses' => 'PackageController@show']);
 		Route::put('package/{id}',['as' => 'package.update', 'uses' => 'PackageController@update']);
 		Route::delete('package/{id}',['as' => 'package.delete', 'uses' => 'PackageController@destroy']);
+
+		// SubCategory CRUD
+		Route::get('item',['as' => 'item.index', 'uses' => 'ItemController@index']);
+		Route::get('item/create',['as' => 'item.create', 'uses' => 'ItemController@create']);
+		Route::post('item',['as' => 'item.store', 'uses' => 'ItemController@store']);
+		Route::get('item/{id}/edit',['as' => 'item.edit', 'uses' => 'ItemController@edit']);
+		Route::get('item/{id}/show',['as' => 'item.show', 'uses' => 'ItemController@show']);
+		Route::put('item/{id}',['as' => 'item.update', 'uses' => 'ItemController@update']);
+		Route::delete('item/{id}',['as' => 'item.delete', 'uses' => 'ItemController@destroy']);
 	});
 
 });
