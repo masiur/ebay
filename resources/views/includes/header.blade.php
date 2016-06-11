@@ -10,38 +10,38 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
     <!-- Bootstrap styles -->
-    <link rel="stylesheet" href="couponia/css/boostrap.css">
+    {!! Html::style('couponia/css/boostrap.css') !!}
     <!-- Font Awesome styles (icons) -->
-    <link rel="stylesheet" href="couponia/css/font_awesome.css">
+    {!! Html::style('couponia/css/font_awesome.css') !!}
     <!-- Main Template styles -->
-    <link rel="stylesheet" href="couponia/css/styles.css">
+    {!! Html::style('couponia/css/styles.css') !!}
     <!-- IE 8 Fallback -->
     <!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="css/ie.css" />
 <![endif]-->
 
     <!-- Your custom styles (blank file) -->
-    <link rel="stylesheet" href="couponia/css/mystyles.css">
+    {!! Html::style('couponia/css/mystyles.css') !!}
 
-    <link rel="stylesheet" href="couponia/css/switcher.css">
+    {!! Html::style('couponia/css/switcher.css') !!}
     <!-- Demo Examples -->
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/apple.css" title="apple" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/pink.css" title="pink" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/teal.css" title="teal" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/gold.css" title="gold" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/downy.css" title="downy" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/atlantis.css" title="atlantis" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/red.css" title="red" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/violet.css" title="violet" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/pomegranate.css" title="pomegranate" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/violet-red.css" title="violet-red" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/mexican-red.css" title="mexican-red" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/victoria.css" title="victoria" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/orient.css" title="orient" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/jgger.css" title="jgger" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/de-york.css" title="de-york" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/blaze-orange.css" title="blaze-orange" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="couponia/css/schemes/hot-pink.css" title="hot-pink" media="all" />
+    {!! Html::style('couponia/css/schemes/apple.css', array('media' => 'all', 'title' => 'apple')) !!}
+    {!! Html::style('couponia/css/schemes/pink.css', array('media' => 'all', 'title' => 'pink')) !!}
+    {!! Html::style('couponia/css/schemes/teal.css', array('media' => 'all', 'title' => 'teal')) !!}
+    {!! Html::style('couponia/css/schemes/gold.css', array('media' => 'all', 'title' => 'gold')) !!}
+    {!! Html::style('couponia/css/schemes/downy.css', array('media' => 'all', 'title' => 'downy')) !!}
+    {!! Html::style('couponia/css/schemes/atlantis.css', array('media' => 'all', 'title' => 'atlantis')) !!}
+    {!! Html::style('couponia/css/schemes/red.css', array('media' => 'all', 'title' => 'red')) !!}
+    {!! Html::style('couponia/css/schemes/violet.css', array('media' => 'all', 'title' => 'violet')) !!}
+    {!! Html::style('couponia/css/schemes/pomegranate.css', array('media' => 'all', 'title' => 'pomegranate')) !!}
+    {!! Html::style('couponia/css/schemes/violet-red.css', array('media' => 'all', 'title' => 'violet-red')) !!}
+    {!! Html::style('couponia/css/schemes/mexican-red.css', array('media' => 'all', 'title' => 'mexican-red')) !!}
+    {!! Html::style('couponia/css/schemes/victoria.css', array('media' => 'all', 'title' => 'victoria')) !!}
+    {!! Html::style('couponia/css/schemes/orient.css', array('media' => 'all', 'title' => 'orient')) !!}
+    {!! Html::style('couponia/css/schemes/jgger.css', array('media' => 'all', 'title' => 'jgger')) !!}
+    {!! Html::style('couponia/css/schemes/de-york.css', array('media' => 'all', 'title' => 'de-york')) !!}
+    {!! Html::style('couponia/css/schemes/blaze-orange.css', array('media' => 'all', 'title' => 'blaze-orange')) !!}
+    {!! Html::style('couponia/css/schemes/hot-pink.css', array('media' => 'all', 'title' => 'hot-pink')) !!}
     <!-- END Demo Examples -->
 
 </head>
