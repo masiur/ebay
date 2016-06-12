@@ -23,7 +23,7 @@ class ItemController extends Controller
     {
         $items = Item::all();
         return view('admin.item.index')
-                    ->with('title', 'Add an Item')
+                    ->with('title', 'List of All Items')
                     ->with('items', $items)
                     ->with('itemCounter', 0);
                     // ->with('categories', $categories)
@@ -32,6 +32,16 @@ class ItemController extends Controller
                     // ->with('type', $type);
     }
 
+    public function indexForMember()
+    {
+        $items = Item::where('member_id', Auth::user()->member->id)->get();
+        return view('admin.item.indexForMember')
+                    ->with('title', 'List of My Items')
+                    ->with('items', $items)
+                    ->with('itemCounter', 0);
+                  
+    }
+    
     public function details()
     {
         // $item = Item::find($id);

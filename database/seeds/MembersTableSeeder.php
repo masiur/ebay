@@ -22,5 +22,15 @@ class MembersTableSeeder extends Seeder
             'created_at' => $faker->date('y-m-d:H:i:s'),
             'updated_at' => $faker->date('y-m-d:H:i:s')
         ]);
+
+        Member::create([
+            'user_id' => 3,
+            'name' => $faker->name,
+            'address' => $faker->address,
+            'phone' => $faker->phoneNumber,
+            'package_id' => 2,
+            'created_at' => $faker->date('y-m-d:H:i:s'),
+            'updated_at' => $faker->date('y-m-d:H:i:s')
+        ]);
     }
 }

@@ -5,7 +5,7 @@ use Faker\Factory as Faker;
 use App\Package;
 
 // composer require laracasts/testdummy
-use Laracasts\TestDummy\Factory as TestDummy;
+// use Laracasts\TestDummy\Factory as TestDummy;
 
 class PackagesTableSeeder extends Seeder
 {

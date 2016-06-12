@@ -45,6 +45,14 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::get('change-password', array('as' => 'password.change', 'uses' => 'Auth\AuthController@changePassword'));
 	Route::post('change-password', array('as' => 'password.doChange', 'uses' => 'Auth\AuthController@doChangePassword'));
 
+	// Item CRUD
+	Route::get('myitem',['as' => 'item.indexForMember', 'uses' => 'ItemController@indexForMember']);
+	Route::get('item/create',['as' => 'item.create', 'uses' => 'ItemController@create']);
+	Route::post('item',['as' => 'item.store', 'uses' => 'ItemController@store']);
+	Route::get('item/{id}/edit',['as' => 'item.edit', 'uses' => 'ItemController@edit']);
+	Route::get('item/{id}/show',['as' => 'item.show', 'uses' => 'ItemController@show']);
+	Route::put('item/{id}',['as' => 'item.update', 'uses' => 'ItemController@update']);
+
 
 	Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function()
 	{
@@ -68,7 +76,7 @@ Route::group(array('middleware' => 'auth'), function()
 		Route::put('subCategory/{id}',['as' => 'subCategory.update', 'uses' => 'SubCategoryController@update']);
 		Route::delete('subCategory/{id}',['as' => 'subCategory.delete', 'uses' => 'SubCategoryController@destroy']);
 
-		// SubCategory CRUD
+		// Package CRUD
 		Route::get('package',['as' => 'package.index', 'uses' => 'PackageController@index']);
 		Route::get('package/create',['as' => 'package.create', 'uses' => 'PackageController@create']);
 		Route::post('package',['as' => 'package.store', 'uses' => 'PackageController@store']);
@@ -77,14 +85,10 @@ Route::group(array('middleware' => 'auth'), function()
 		Route::put('package/{id}',['as' => 'package.update', 'uses' => 'PackageController@update']);
 		Route::delete('package/{id}',['as' => 'package.delete', 'uses' => 'PackageController@destroy']);
 
-		// SubCategory CRUD
+		// Item CRUD
 		Route::get('item',['as' => 'item.index', 'uses' => 'ItemController@index']);
-		Route::get('item/create',['as' => 'item.create', 'uses' => 'ItemController@create']);
-		Route::post('item',['as' => 'item.store', 'uses' => 'ItemController@store']);
-		Route::get('item/{id}/edit',['as' => 'item.edit', 'uses' => 'ItemController@edit']);
-		Route::get('item/{id}/show',['as' => 'item.show', 'uses' => 'ItemController@show']);
-		Route::put('item/{id}',['as' => 'item.update', 'uses' => 'ItemController@update']);
 		Route::delete('item/{id}',['as' => 'item.delete', 'uses' => 'ItemController@destroy']);
+		
 	});
 
 });
