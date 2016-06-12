@@ -44,12 +44,12 @@
                                         <tbody>
                                         @foreach ($items as $item)
                                             <tr>
-                                                <td>{!! $itemCounter++ !!}</td>
+                                                <td>{!! ++$itemCounter !!}</td>
                                                 <td>{!! $item->name !!}</td>
                                                 <td>{!! $item->description !!}</td>
-                                                <td>{!! $item->category_id !!}</td>
-                                                <td>{!! $item->subcategory_id or '' !!}</td>
-                                                <td>{!! $item->seller_id !!}</td>
+                                                <td>{!! $item->category->name !!}</td>
+                                                <td>{!! $item->subcategory->name !!}</td>
+                                                <td>{!! $item->seller->name !!}</td>
                                                 <td>{!! $item->price !!}</td>
                                                 <td>{!! $item->amount_in_stock !!}</td>
                                                 <td>{!! $item->type !!}</td>

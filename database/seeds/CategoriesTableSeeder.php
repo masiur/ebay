@@ -15,14 +15,14 @@ class CategoriesTableSeeder extends Seeder
 
         Category::create([
             'name' => $faker->randomLetter,
-            'created_at' => $faker->date('y-m-d:H:i:s'),
-            'updated_at' => $faker->date('y-m-d:H:i:s')
+            'created_at' => $faker->date('Y-m-d H:i:s'),
+            'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
 
         Category::create([
             'name' => $faker->randomLetter,
-            'created_at' => $faker->date('y-m-d:H:i:s'),
-            'updated_at' => $faker->date('y-m-d:H:i:s')
+            'created_at' => $faker->date('Y-m-d H:i:s'),
+            'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
     }
 }
