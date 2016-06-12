@@ -60,7 +60,7 @@ class ItemController extends Controller
         $categories = Category::lists('name', 'id');
         $subcategories = Subcategory::lists('name', 'id');
         $seller = Member::lists('name', 'id');
-        $type = [ 'bye' => 'buy', 'quote' => 'quote'];
+        $type = [ 'buy' => 'buy', 'quote' => 'quote'];
         return view('admin.item.create')
                     ->with('title', 'Add an Item')
                     ->with('categories', $categories)

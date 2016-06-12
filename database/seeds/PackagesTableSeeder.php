@@ -16,13 +16,17 @@ class PackagesTableSeeder extends Seeder
         Package::create([
             'title' => 'Free',
             'monthly_fee' => 0,
-            'sales_limit' => 10
+            'sales_limit' => 10,
+            'created_at' => $faker->date('Y-m-d H:i:s'),
+            'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
 
         Package::create([
             'title' => 'Premium',
             'monthly_fee' => 100,
-            'sales_limit' => 10000
+            'sales_limit' => 10000,
+            'created_at' => $faker->date('Y-m-d H:i:s'),
+            'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
     }
 }

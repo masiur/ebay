@@ -27,8 +27,8 @@
                                         <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Category</th>
                                             <th>Sub Category</th>
+                                            <th>Category</th>
                                             <th>#</th>
                                             <th>#</th>
                                         </tr>

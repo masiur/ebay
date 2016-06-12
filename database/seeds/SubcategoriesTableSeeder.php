@@ -16,15 +16,15 @@ class SubcategoriesTableSeeder extends Seeder
         Subcategory::create([
             'name' => $faker->randomLetter,
             'category_id' => 1,
-            'created_at' => $faker->date('y-m-d:H:i:s'),
-            'updated_at' => $faker->date('y-m-d:H:i:s')
+            'created_at' => $faker->date('Y-m-d H:i:s'),
+            'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
 
         Subcategory::create([
             'name' => $faker->randomLetter,
             'category_id' => 1,
-            'created_at' => $faker->date('y-m-d:H:i:s'),
-            'updated_at' => $faker->date('y-m-d:H:i:s')
+            'created_at' => $faker->date('Y-m-d H:i:s'),
+            'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
     }
 }
