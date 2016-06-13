@@ -43,7 +43,7 @@
                                         <tbody>
                                         @foreach ($items as $item)
                                             <tr>
-                                                <td>{!! $itemCounter++ !!}</td>
+                                                <td>{!! ++$itemCounter !!}</td>
                                                 <td>{!! $item->name !!}</td>
                                                 <td>{!! $item->description !!}</td>
                                                 <td>{!! $item->category_id !!}</td>

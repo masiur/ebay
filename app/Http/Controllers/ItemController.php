@@ -9,16 +9,20 @@ use App\Http\Requests\ItemRequest;
 use App\Http\Controllers\Controller;
 use App\Item;
 use App\Member;
+use Auth;
 use App\Category;
 use App\Subcategory;
 
 class ItemController extends Controller
 {
+    
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $items = Item::all();
@@ -34,7 +38,7 @@ class ItemController extends Controller
 
     public function indexForMember()
     {
-        $items = Item::where('member_id', Auth::user()->member->id)->get();
+        $items = Item::where('seller_id', Auth::user()->member->id)->get();
         return view('admin.item.indexForMember')
                     ->with('title', 'List of My Items')
                     ->with('items', $items)
@@ -44,10 +48,10 @@ class ItemController extends Controller
     
     public function details()
     {
-        // $item = Item::find($id);
+        $item = Item::find($id);
         return view('item')
                 ->with('title', "Item Details");
-                // ->with('item', $item);
+                ->with('item', $item);
     }
 
     /**
@@ -95,7 +99,7 @@ class ItemController extends Controller
         $item->description = $data['description'];
         $item->category_id = $data['category_id'];
         $item->subcategory_id = $data['subcategory_id'];
-        $item->seller_id = $data['seller_id'];
+        $item->seller_id = Auth::user()->member->id;
         $item->price = $data['price'];
         $item->amount_in_stock = $data['amount_in_stock'];
         $item->type = $data['type'];
@@ -167,7 +171,6 @@ class ItemController extends Controller
         $item->description = $data['description'];
         $item->category_id = $data['category_id'];
         $item->subcategory_id = $data['subcategory_id'];
-        $item->seller_id = $data['seller_id'];
         $item->price = $data['price'];
         $item->amount_in_stock = $data['amount_in_stock'];
         $item->type = $data['type'];

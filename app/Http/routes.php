@@ -15,11 +15,10 @@ Route::get('/', function () {
 	return Redirect::to('/home');
 });
 
-Route::get('/home', function () {
-	return view('home')->with('title', 'Home');
-});
-
-Route::get('item/details',['as' => 'item', 'uses' => 'ItemController@details']);
+Route::get('/home', ['as'=>'user.create','uses' => 'FrontendController@home']);
+	
+return view('home')->with('title', 'Home')->with();
+Route::get('item/details',['as' => 'item.details', 'uses' => 'ItemController@details']);
 
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
@@ -41,7 +40,7 @@ Route::group(array('middleware' => 'auth'), function()
 
 	Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
 	Route::get('profile', ['as' => 'profile', 'uses' => 'UserController@profile']);
-	// Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
+	Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
 	Route::get('change-password', array('as' => 'password.change', 'uses' => 'Auth\AuthController@changePassword'));
 	Route::post('change-password', array('as' => 'password.doChange', 'uses' => 'Auth\AuthController@doChangePassword'));
 
@@ -56,7 +55,6 @@ Route::group(array('middleware' => 'auth'), function()
 
 	Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function()
 	{
-		Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
 
 		// Category CRUD
 		Route::get('category',['as' => 'category.index', 'uses' => 'CategoryController@index']);

@@ -16,19 +16,21 @@
             <nav class="navigation">
                 <ul class="list-unstyled">
 
-                     <li class="{!! Menu::areActiveURLs(['dashboard', 'change-password']) !!}"><a href="#"><i class="ion-flask"></i> <span class="nav-label">UI Elements</span></a>
+                     <li class="{!! Menu::areActiveURLs(['dashboard', 'change-password']) !!}"><a href="#"><i class="ion-flask"></i> <span class="nav-label">Dashboard</span></a>
                         <ul class="list-unstyled">
 
                             <li class="{!! Menu::isActiveRoute('dashboard') !!}">
                                 <a href="{!!  URL::route( 'dashboard') !!}">Dashboard</a>
                             </li>
 
-                            <li class="{!! Menu::isActiveURL('change-password') !!}">
-                                <a href="{!!  URL::to( 'change-password') !!}">Password Change</a>
+                            <li class="">
+                                <a href="{!!  URL::to( '/') !!}">Go Back to Home</a>
                             </li>
                         </ul>
                     </li>
 
+                    <!-- This portion is only visible for admin  -->
+                    @role('admin')
                     <li class="has-submenu"><a href="#"><i class="ion-compose"></i> <span class="nav-label">Category</span></a>
                         <ul class="list-unstyled">
                             <li><a href="{{ route('category.index') }}">Category List</a></li>
@@ -52,11 +54,14 @@
 
                         </ul>
                     </li>
+                    <li><a href="{{ route('item.index') }}"><i class="ion-grid"></i> All Items</a></li>
+                    @endrole
+                    <!-- admin portion end  -->
 
                     <li class="has-submenu"><a href="#"><i class="ion-stats-bars"></i> <span class="nav-label">Item</span><!-- <span class="badge bg-purple">1</span> --></a>
                         <ul class="list-unstyled">
                             <li><a href="{{ route('item.indexForMember') }}">My Items</a></li>
-                            <li><a href="{{ route('item.index') }}">All Items</a></li>
+                            
                             <li><a href="{{ route('item.create') }}">Add Item</a></li>
 
                         </ul>

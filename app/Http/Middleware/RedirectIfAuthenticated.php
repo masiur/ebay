@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-
+use Entrust;
 class RedirectIfAuthenticated
 {
     /**
@@ -34,8 +34,12 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->check()) {
-            return redirect('/');
+        if ($this->auth->check()) { 
+            if(!Entrust::hasRole('admin')) {
+                return redirect()->route('dashboard')->with('error', 'You do not have permission to access');
+            } else {
+                return redirect('/');
+            }
         }
 
         return $next($request);

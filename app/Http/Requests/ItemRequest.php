@@ -26,7 +26,6 @@ class ItemRequest extends Request
         return [
             'name' => 'required',
             'category_id' => 'required',
-            'seller_id' => 'required',
             'price' => 'required|numeric',
             'amount_in_stock' => 'required|numeric',
             'type' => 'required|in:buy,quote',

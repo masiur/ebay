@@ -57,13 +57,6 @@
                                     </div>
 
                                     <div class="form-group">
-                                        {!! Form::label('seller_id', "Seller*", array('class' => 'control-label col-lg-2')) !!}
-                                        <div class="col-lg-6">
-                                            {!! Form::select('seller_id', $seller, null, array('class' => 'form-control', 'required' => 'required')) !!}
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
                                         {!! Form::label('price', "Price*", array('class' => 'control-label col-lg-2')) !!}
                                         <div class="col-lg-6">
                                             {!! Form::text('price', null, array('class' => 'form-control', 'placeholder' => 'Price of the Item', 'required' => 'required')) !!}

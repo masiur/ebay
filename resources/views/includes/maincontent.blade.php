@@ -312,7 +312,7 @@
                                         <ul class="product-actions-list">
                                             <li><a class="btn btn-sm" href="#"><i class="fa fa-shopping-cart"></i> To Cart</a>
                                             </li>
-                                            <li><a class="btn btn-sm" href="{{ route('item') }}"><i class="fa fa-bars"></i> Details</a>
+                                            <li><a class="btn btn-sm" href=""><i class="fa fa-bars"></i> Details</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -533,9 +533,13 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- this part is assumed to keep in homepage -->
                     <div class="gap gap-small"></div>
                     <h1 class="mb20">New Arrivals <small><a href="#">View All</a></small></h1>
                     <div class="row row-wrap">
+                        @if(count($items))
+                        @foreach($items as $item)
                         <div class="col-md-4">
                             <div class="product-thumb">
                                 <header class="product-header">
@@ -548,23 +552,23 @@
                                     </div>
                                 </header>
                                 <div class="product-inner">
-                                    <ul class="icon-group icon-list-rating icon-list-non-rated" title="not rated yet">
+                                    <!-- <ul class="icon-group icon-list-rating icon-list-non-rated" title="not rated yet">
                                         <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>  } rating 
                                         </li>
                                         <li><i class="fa fa-star"></i>
                                         </li>
                                         <li><i class="fa fa-star"></i>
                                         </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-title">Aspen Lounge Chair</h5>
+                                    </ul> -->
+                                    <h5 class="product-title">{{ $item->name }}</h5>
                                     <p class="product-desciption">Suscipit cubilia ligula potenti ultrices vehicula consectetur risus</p>
                                     <div class="product-meta">
                                         <ul class="product-price-list">
-                                            <li><span class="product-price">$160</span>
+                                            <li><span class="product-price">{{ $item->price }}</span>
                                             </li>
                                             <li><span class="product-old-price">$276</span>
                                             </li>
@@ -574,13 +578,15 @@
                                         <ul class="product-actions-list">
                                             <li><a class="btn btn-sm" href="#"><i class="fa fa-shopping-cart"></i> To Cart</a>
                                             </li>
-                                            <li><a class="btn btn-sm"><i class="fa fa-bars"></i> Details</a>
+                                            <li><a class="btn btn-sm" href="{!! route('item.details',$item->id) !!}">><i class="fa fa-bars"></i> Details</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        @endif
                         <div class="col-md-4">
                             <div class="product-thumb">
                                 <header class="product-header">

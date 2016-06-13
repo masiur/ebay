@@ -177,11 +177,7 @@
                                 <li><a href="page-full-width.html">Pages</a>
                                     <ul>
                                         <li><a href="page-my-account-settings.html">My Account</a>
-                                            <ul>
-                                                <li><a href="page-my-account-settings.html">Settings</a>
-                                                </li>
-                                                <li><a href="page-my-account-addresses.html">Address Book</a>
-                                                </li>
+                                            <ul> 
                                                 <li><a href="page-my-account-orders.html">Orders History</a>
                                                 </li>
                                                 <li><a href="page-my-account-wishlist.html">Wishlist</a>
@@ -189,20 +185,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="page-full-width.html">Full Width</a>
-                                        </li>
-                                        <li><a href="page-sidebar-right.html">Sidebar Right</a>
-                                        </li>
-                                        <li><a href="page-sidebar-left.html">Sidebar Left</a>
-                                        </li>
-                                        <li><a href="page-faq.html">Faq</a>
-                                        </li>
-                                        <li><a href="page-about-us.html">About us</a>
-                                        </li>
-                                        <li><a href="page-team.html">Team</a>
-                                        </li>
-                                        <li><a href="page-cart.html">Shopping Cart</a>
-                                        </li>
-                                        <li><a href="page-checkout.html">Checkout</a>
+                                       
                                         </li>
                                         <li><a href="page-404.html">404</a>
                                         </li>
@@ -210,10 +193,7 @@
                                             <ul>
                                                 <li><a href="page-search-black.html">Black</a>
                                                 </li>
-                                                <li><a href="page-search-white.html">White</a>
-                                                </li>
-                                                <li><a href="page-search-sticky.html">Sticky</a>
-                                                </li>
+                                                
                                                 <li><a href="page-search-no-search.html">No Search</a>
                                                 </li>
                                             </ul>
@@ -222,6 +202,9 @@
                                         </li>
                                     </ul>
                                 </li>
+
+                                
+
                             </ul>
                         </nav>
                         <!-- END MAIN NAVIGATION -->
@@ -229,6 +212,8 @@
                     <div class="col-md-6">
                         <!-- LOGIN REGISTER LINKS -->
                         <ul class="login-register">
+                            <li><a href="{{ route('dashboard') }}">Go to Dashboard</a>        
+                            </li>
                             <li class="shopping-cart"><a href="page-cart.html"><i class="fa fa-shopping-cart"></i>My Cart</a>
                                 <div class="shopping-cart-box">
                                     <ul class="shopping-cart-items">
