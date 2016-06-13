@@ -14,7 +14,8 @@
         "oriceon/oauth-5-laravel": "dev-master",
         "guzzlehttp/guzzle": "4.0",
         "stripe/stripe-php" : "~3.0",
-        "fzaninotto/faker": "^1.6"
+        "fzaninotto/faker": "^1.6",
+        "nesbot/carbon": "~1.18"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

@@ -43,5 +43,5 @@
     {!! Html::style('couponia/css/schemes/blaze-orange.css', array('media' => 'all', 'title' => 'blaze-orange')) !!}
     {!! Html::style('couponia/css/schemes/hot-pink.css', array('media' => 'all', 'title' => 'hot-pink')) !!}
     <!-- END Demo Examples -->
-
+   
 </head>

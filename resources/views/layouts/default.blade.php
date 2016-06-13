@@ -2,6 +2,7 @@
 <html lang="en">
 
 @include('includes.header')
+@yield('style')
 <body class="wide" style="background-image: url(couponia/img/textures/wood-1.jpg)">
 
 
@@ -33,6 +34,7 @@
     //////////////END PAGE CONTENT///////// 
     ////////////////////////////////////-->
     @include('includes.footer')
+    @yield('script')
     <!-- footer  -->
 
     </div>

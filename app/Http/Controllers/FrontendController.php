@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Item;
+use App\Message;
 
 class FrontendController extends Controller
 {
@@ -27,6 +28,22 @@ class FrontendController extends Controller
         return view('home')
                 ->with('title', 'Home')
                 ->with('items', $items);
+    }
+
+    public function discussion()
+    {
+        // $messages = Message::all();
+        return view('discussion')
+                ->with('title', 'Discussion');
+                // ->with('messages', $messages);
+    }
+
+    public function details()
+    {
+        $item = Item::find($id);
+        return view('item')
+                ->with('title', "Item Details")
+                ->with('item', $item);
     }
 
     /**

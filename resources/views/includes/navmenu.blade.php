@@ -22,7 +22,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="active"><a href="index-coupon-layout-1.html">Coupon Layout</a>
+                                        <li class="active"><a href="index-coupon-layout-1.html">Message</a>
                                             <ul>
                                                 <li><a href="index-coupon-layout-1.html">Layout 1</a>
                                                 </li>
@@ -90,18 +90,7 @@
                                                         </li>
                                                         <li><a href="category-page-thumbnails-coupon-layout-3.html">Layout 3</a>
                                                         </li>
-                                                        <li><a href="category-page-thumbnails-coupon-layout-4.html">Layout 4</a>
-                                                        </li>
-                                                        <li><a href="category-page-thumbnails-coupon-layout-5.html">Layout 5</a>
-                                                        </li>
-                                                        <li><a href="category-page-thumbnails-coupon-layout-6.html">Layout 6</a>
-                                                        </li>
-                                                        <li><a href="category-page-thumbnails-coupon-layout-7.html">Layout 7</a>
-                                                        </li>
-                                                        <li><a href="category-page-thumbnails-coupon-layout-8.html">Layout 8</a>
-                                                        </li>
-                                                        <li><a href="category-page-thumbnails-coupon-horizontal.html">Horizontal</a>
-                                                        </li>
+                                                       
                                                     </ul>
                                                 </li>
                                                 <li><a href="category-page-thumbnails-breadcrumbs.html">Breadcrumbs</a>
@@ -134,7 +123,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="features-typography.html">Features</a>
+                                <li><a href="{{ route('message') }}">Message</a>
                                     <ul>
                                         <li><a href="features-typography.html">Typography</a>
                                         </li>

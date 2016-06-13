@@ -17,8 +17,7 @@ Route::get('/', function () {
 
 Route::get('/home', ['as'=>'user.create','uses' => 'FrontendController@home']);
 	
-return view('home')->with('title', 'Home')->with();
-Route::get('item/details',['as' => 'item.details', 'uses' => 'ItemController@details']);
+Route::get('item/details',['as' => 'item.details', 'uses' => 'FrontendController@details']);
 
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
@@ -37,7 +36,6 @@ Route::group(['middleware' => 'guest'], function(){
 
 Route::group(array('middleware' => 'auth'), function()
 {
-
 	Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
 	Route::get('profile', ['as' => 'profile', 'uses' => 'UserController@profile']);
 	Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
@@ -52,6 +50,7 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::get('item/{id}/show',['as' => 'item.show', 'uses' => 'ItemController@show']);
 	Route::put('item/{id}',['as' => 'item.update', 'uses' => 'ItemController@update']);
 
+	Route::get('message',['as' => 'message', 'uses' => 'FrontendController@discussion']);
 
 	Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function()
 	{
