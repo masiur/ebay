@@ -52,6 +52,20 @@ Route::group(array('middleware' => 'auth'), function()
 
 	Route::get('message',['as' => 'message', 'uses' => 'FrontendController@discussion']);
 
+	Route::get('cart',['as'=>'cart.index', 'uses'=>'CartController@index']);
+	Route::get('cart/add/{id?}',['as'=>'cart.create', 'uses'=>'CartController@create']);
+	Route::post('cart/store',['as'=>'cart.store', 'uses'=>'CartController@store']);
+	Route::get('cart/edit/{id}',['as'=>'cart.edit', 'uses'=>'CartController@edit']);
+	Route::post('cart/update/{id}',['as'=>'cart.update', 'uses'=>'CartController@update']);
+	Route::delete('cart/delete/{id}',['as'=>'cart.delete', 'uses'=>'CartController@destroy']);
+	// Route::get('cart/checkout/{id}',['as'=>'cart.checkout', 'uses'=>'CartController@checkout']);
+	
+	// Route::get('order',['as' => 'order.index', 'uses' => 'OrderController@userOrders']);
+	// Route::get('order/details/{id}',['as' => 'order.details', 'uses' => 'OrderController@orderDetails']);
+	// Route::get('order/currentorder',['as' => 'order.currentorder', 'uses' => 'OrderController@currentOrder']);
+	// Route::put('order/checkout',['as' => 'order.store.checkout', 'uses' => 'OrderController@checkout']);
+	// Route::get('order/cards/images/{order_id}/{card_id}',['as' => 'order.cards.images', 'uses' => 'StockController@cardImages']);
+
 	Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function()
 	{
 

@@ -31,4 +31,8 @@ class Item extends Model
     public function message(){
         return $this->hasMany('App\Message', 'item_id', 'id');
     }
+
+    public function cart(){
+        return $this->hasMany('App\Cart', 'item_id', 'id');
+    }
 }

@@ -31,4 +31,10 @@ class Member extends Model
     public function buyer(){
         return $this->hasMany('App\Message', 'buyer_id', 'id');
     }
+    public function buyerCart(){
+        return $this->hasOne('App\Cart', 'seller_id', 'id');
+    }
+    public function sellerCart(){
+        return $this->hasMany('App\Cart', 'buyer_id', 'id');
+    }
 }
