@@ -100,14 +100,18 @@ class CartController extends Controller
      */
     public function update(Request $request)
     {
-        $data = $request->all();
-        $items = json_decode($request->input('items'));
-        foreach ($items as $item ) {
-            $cartPrevious = Cart::whereItemId($item->id)->first();
-            $cartPrevious->amount = $request->input('item-quantityOfItemId'.$item->id);
-            $cartPrevious->save();
+        try {
+            $data = $request->all();
+            $items = json_decode($request->input('items'));
+            foreach ($items as $item ) {
+                $cartPrevious = Cart::whereItemId($item->item_id)->first();
+                $cartPrevious->amount = $request->input('item-quantityOfItemId'.$item->item_id);
+                $cartPrevious->save();
+            }
+            return redirect()->route('cart.index')->with('success', 'Updated Successfully');
+        } catch(Exception $ex) {
+            return redirect()->route('cart.index')->with('error', 'Something went wrong.Try Again.');
         }
-        return redirect()->route('cart.index')->with('success', 'Updated Successfully');
 
     }
 
