@@ -56,8 +56,8 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::get('cart/add/{id?}',['as'=>'cart.create', 'uses'=>'CartController@create']);
 	Route::post('cart/store',['as'=>'cart.store', 'uses'=>'CartController@store']);
 	Route::get('cart/edit/{id}',['as'=>'cart.edit', 'uses'=>'CartController@edit']);
-	Route::post('cart/update/{id}',['as'=>'cart.update', 'uses'=>'CartController@update']);
-	Route::delete('cart/delete/{id}',['as'=>'cart.delete', 'uses'=>'CartController@destroy']);
+	Route::post('cart/update',['as'=>'cart.update', 'uses'=>'CartController@update']);
+	Route::delete('cart/{id}',['as'=>'cart.delete', 'uses'=>'CartController@destroy']);
 	// Route::get('cart/checkout/{id}',['as'=>'cart.checkout', 'uses'=>'CartController@checkout']);
 	
 	// Route::get('order',['as' => 'order.index', 'uses' => 'OrderController@userOrders']);

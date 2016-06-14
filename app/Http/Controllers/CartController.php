@@ -10,6 +10,7 @@ use App\Cart;
 use App\Item;
 use Auth;
 use View;
+use Redirect;
 class CartController extends Controller
 {
     /**
@@ -19,28 +20,17 @@ class CartController extends Controller
      */
     public function index()
     {
-        $cart = Cart::whereBuyerId(Auth::user()->member->id)->first();
-        // if($cart){
-        //     $cart_details = CartDetails::with('cardInfo')->whereCartId($cart->id)->get();
-        // }
-        // else{
-        //     $cart_details = [];
-        // }
-        // $total = 0.00;
-        // $dollarToTaka = (float) MetaData::find(1)->value;
-        // foreach ($cart_details as $key) {
-        //     $key->card_info->price = (float) ($key->card_info->price * $key->amount * $dollarToTaka);
-        //     $total +=  $key->card_info->price;
-        // }
-    
-        // $balance = User::getBalance();
+        $carts = Cart::whereBuyerId(Auth::user()->member->id)->get();
+        $total = 0.00;
+        foreach ($carts as $cart ) {
+            $cart->item->price = (float) ($cart->item->price * $cart->amount);
+            $total +=  $cart->item->price;
+        }
         
         return View::make('cart.cart')
                 ->with('title', 'My Cart')
-                ->with('cart', $cart);
-                // ->with('total', $total)
-                // ->with('balance', $balance)
-                // ->with('cart_details', $cart_details);
+                ->with('items', $carts)
+                ->with('total', $total);
     }
 
     /**
@@ -50,24 +40,22 @@ class CartController extends Controller
      */
     public function create($id = 1)
     {
-        // $item_id = $id;
-        // $items = item::lists('title', 'id');
+
         $cart = Cart::whereBuyerId(Auth::user()->member->id)->first();
-        $item = Item::find($id);
-        // $item = Item::whereitemId($item->id)->whereUserId(null)->get()->count();
+        $item = Item::find($id);    
         $available = $item->amount_in_stock;
-        if($cart == null){
+
+        if (!Cart::whereItemId($id)->exists()) {
             $cart = new Cart();
             $cart->item_id = $item->id;
             $cart->buyer_id = Auth::user()->member->id;
             $cart->seller_id = $item->seller_id;
+            $cart->amount = 1;
             $cart->save();
+            return redirect()->route('cart.index')->with('success', 'Item Added to Cart');
+        } else {
+            return redirect()->route('cart.index')->with('info', 'Item already Added to Cart');
         }
-        // $cart_details = CartDetails::whereCartId($cart->id)->whereitemId($id)->first();
-        return View::make('cart.create')
-        ->with('title', 'Add To My Cart')
-        ->with('item', $item);
-        // ->with('item_id', $item_id);
     }
 
     /**
@@ -110,9 +98,17 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $data = $request->all();
+        $items = json_decode($request->input('items'));
+        foreach ($items as $item ) {
+            $cartPrevious = Cart::whereItemId($item->id)->first();
+            $cartPrevious->amount = $request->input('item-quantityOfItemId'.$item->id);
+            $cartPrevious->save();
+        }
+        return redirect()->route('cart.index')->with('success', 'Updated Successfully');
+
     }
 
     /**
@@ -123,7 +119,15 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        try{
+            Cart::destroy($id);
+
+            return Redirect::route('cart.index')->with('success','Item Removed Successfully.');
+
+        }catch(Exception $ex){
+            return Redirect::route('cart.index')->with('error','Something went wrong.Try Again.');
+        }
     }
 }
 // public function store()
