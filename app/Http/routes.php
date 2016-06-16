@@ -15,7 +15,7 @@ Route::get('/', function () {
 	return Redirect::to('/home');
 });
 
-Route::get('/home', ['as'=>'user.create','uses' => 'FrontendController@home']);
+Route::get('/home', ['as'=>'home','uses' => 'FrontendController@home']);
 	
 Route::get('item/details',['as' => 'item.details', 'uses' => 'FrontendController@details']);
 
@@ -58,7 +58,20 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::get('cart/edit/{id}',['as'=>'cart.edit', 'uses'=>'CartController@edit']);
 	Route::post('cart/update',['as'=>'cart.update', 'uses'=>'CartController@update']);
 	Route::delete('cart/{id}',['as'=>'cart.delete', 'uses'=>'CartController@destroy']);
-	// Route::get('cart/checkout/{id}',['as'=>'cart.checkout', 'uses'=>'CartController@checkout']);
+	Route::get('cart/checkout',['as'=>'cart.checkout', 'uses'=>'CartController@checkout']);
+
+	// paypal 
+Route::get('payment', array(
+    'as' => 'payment',
+    'uses' => 'PaypalController@postPayment',
+));
+
+// this is after make the payment, PayPal redirect back to your site
+Route::get('payment/status', array(
+    'as' => 'payment.status',
+    'uses' => 'PaypalController@getPaymentStatus',
+));
+
 	
 	// Route::get('order',['as' => 'order.index', 'uses' => 'OrderController@userOrders']);
 	// Route::get('order/details/{id}',['as' => 'order.details', 'uses' => 'OrderController@orderDetails']);
@@ -99,6 +112,9 @@ Route::group(array('middleware' => 'auth'), function()
 		// Item CRUD
 		Route::get('item',['as' => 'item.index', 'uses' => 'ItemController@index']);
 		Route::delete('item/{id}',['as' => 'item.delete', 'uses' => 'ItemController@destroy']);
+
+		Route::get('salesrecord',['as' => 'salesrecord.index', 'uses' => 'ItemController@salesrecord']);
+		
 		
 	});
 
@@ -118,75 +134,10 @@ Route::group(array('middleware' => 'auth'), function()
 
 
 
-
 // Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function()
 // {
 // 	Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'Auth\AuthController@dashboard'));
 // });
-
-
-
-
-
-Route::get('profile1',function(){
-	return View::make('template.profile')->with('title','Profile');
-});
-
-// Route::get('timeline',function(){
-// 	return View::make('template.timeline')->with('title','Timeline');
-// });
-
-// Route::get('widgets',function(){
-// 	return View::make('template.widgets')->with('title','Widgets');
-// });
-
-// Route::get('portlets',function(){
-// 	return View::make('template.portlets')->with('title','Portlets');
-// });
-
-// Route::get('panel',function(){
-// 	return View::make('template.panel')->with('title','Panel');
-// });
-
-// Route::get('chart_x',function(){
-// 	return View::make('template.chart_x')->with('title','Chart_x');
-// });
-
-
-// Route::get('index2',function(){
-// 	return View::make('template.dashboard')->with('title','Dashboard');
-// });
-
-// Route::get('gmap',function(){
-// 	return View::make('template.gmap')->with('title','GMap');
-// });
-
-// Route::get('friends',function(){
-// 	return View::make('template.friends')->with('title','Friends');
-// });
-
-// Route::get('adForm',function(){
-// 	return View::make('template.advanced_form')->with('title','Advanced Form');//problem
-// });
-
-
-// Route::get('form-wizard',function(){
-// 	return View::make('template.form_wizard')->with('title','Form Wizard');
-// });
-
-// Route::get('dataTable',function(){
-// 	return View::make('template.datatable')->with('title','Data Table');
-// });
-
-
-Route::get('dataTable',function(){
-	return View::make('template.datatable')->with('title','Data Table');
-});
-
-
-Route::get('EditableDataTable',function(){
-	return View::make('template.editDataTable')->with('title','Editable Data Table');
-});
 
 
 

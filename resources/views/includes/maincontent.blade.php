@@ -5,6 +5,7 @@
 
 
         <div class="container">
+        @include('includes.alert')
             <div class="row">
                 <div class="col-md-3">
                     <aside class="sidebar-left">

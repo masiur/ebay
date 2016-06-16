@@ -78,16 +78,16 @@
                 </div>
                 <div class="col-md-3">
                     <ul class="cart-total-list">
-                        <li><span>Sub Total</span><span>{{ $total }}</span>
+                        <li><span>Sub Total</span><span>${{ $total }}</span>
                         </li>
                         <li><span>Shipping</span><span>$0.00</span>
                         </li>
                         <li><span>Taxes</span><span>$0.00</span>
                         </li>
-                        <li><span>Total</span><span>{{ $total }}</span>
+                        <li><span>Total</span><span>${{ $total }}</span>
                         </li>
                     </ul>
-                    <a href="" class="btn btn-primary btn-lg">Checkout</a>
+                    <a href="{{ route('cart.checkout') }}" class="btn btn-primary btn-lg">Checkout</a>
                 </div>
             @else
                 <h3>You have not added any item to cart.</h3>
