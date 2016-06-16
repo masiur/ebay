@@ -6,55 +6,7 @@
                         <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                         <nav>
                             <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
-                                <li class="active"><a href="{{ url('home') }}">Home</a>
-                                    <ul>
-                                        <li><a href="index-shop-layout-1.html">Shop Layout</a>
-                                            <ul>
-                                                <li><a href="index-shop-layout-1.html">Layout 1</a>
-                                                </li>
-                                                <li><a href="index-shop-layout-2.html">Layout 2</a>
-                                                </li>
-                                                <li><a href="index-shop-layout-3.html">Layout 3</a>
-                                                </li>
-                                                <li><a href="index-shop-layout-4.html">Layout 4</a>
-                                                </li>
-                                                <li><a href="index-shop-layout-5.html">Layout 5</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="active"><a href="index-coupon-layout-1.html">Message</a>
-                                            <ul>
-                                                <li><a href="index-coupon-layout-1.html">Layout 1</a>
-                                                </li>
-                                                <li><a href="index-coupon-layout-2.html">Layout 2</a>
-                                                </li>
-                                                <li><a href="index-coupon-layout-3.html">Layout 3</a>
-                                                </li>
-                                                <li class="active"><a href="index.html">Layout 4</a>
-                                                </li>
-                                                <li><a href="index-coupon-layout-5.html">Layout 5</a>
-                                                </li>
-                                                <li><a href="index-coupon-layout-6.html">Layout 6</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="index-header-layout-1.html">Headers</a>
-                                            <ul>
-                                                <li><a href="index-header-layout-1.html">Layout 1</a>
-                                                </li>
-                                                <li><a href="index-header-layout-2.html">Layout 2</a>
-                                                </li>
-                                                <li><a href="index-header-layout-3.html">Layout 3</a>
-                                                </li>
-                                                <li><a href="index-header-layout-4.html">Layout 4</a>
-                                                </li>
-                                                <li><a href="index-header-layout-5.html">Layout 5</a>
-                                                </li>
-                                                <li><a href="index-header-logged-user.html">Logged User</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="{!! Menu::isActiveURL('home') !!}"><a href="{{ url('home') }}">Home</a>
                                 </li>
                                 <li><a href="category-page-shop.html">Category</a>
                                     <ul>
@@ -68,14 +20,7 @@
                                                     <ul>
                                                         <li><a href="category-page-thumbnails-shop-layout-1.html">Layout 1</a>
                                                         </li>
-                                                        <li><a href="category-page-thumbnails-shop-layout-2.html">Layout 2</a>
-                                                        </li>
-                                                        <li><a href="category-page-thumbnails-shop-layout-3.html">Layout 3</a>
-                                                        </li>
-                                                        <li><a href="category-page-thumbnails-shop-layout-4.html">layout 4</a>
-                                                        </li>
-                                                        <li><a href="category-page-thumbnails-shop-layout-5.html">Layout 5</a>
-                                                        </li>
+                                                       
                                                         <li><a href="category-page-thumbnails-shop-layout-6.html">Layout 6</a>
                                                         </li>
                                                         <li><a href="category-page-thumbnails-shop-horizontal.html">Horizontal</a>
@@ -127,20 +72,7 @@
                                     <ul>
                                         <li><a href="features-typography.html">Typography</a>
                                         </li>
-                                        <li><a href="features-elements.html">Elements</a>
-                                        </li>
-                                        <li><a href="features-grid.html">Grid</a>
-                                        </li>
-                                        <li><a href="features-icons.html">Icons</a>
-                                        </li>
-                                        <li><a href="features-image-hover.html">Image Hovers</a>
-                                        </li>
-                                        <li><a href="features-sliders.html">Sliders</a>
-                                        </li>
-                                        <li><a href="features-media.html">Media</a>
-                                        </li>
-                                        <li><a href="features-lightbox.html">Lightbox</a>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                                 <li><a href="blog-sidebar-right.html">Blog</a>
@@ -203,8 +135,8 @@
                         <ul class="login-register">
                             <li><a href="{{ route('dashboard') }}">Go to Dashboard</a>        
                             </li>
-                            <li class="shopping-cart"><a href="page-cart.html"><i class="fa fa-shopping-cart"></i>My Cart</a>
-                                <div class="shopping-cart-box">
+                            <li class="shopping-cart {!! Menu::isActiveRoute('cart.index') !!}"><a href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i>My Cart</a>
+                                <!-- <div class="shopping-cart-box">
                                     <ul class="shopping-cart-items">
                                         <li>
                                             <a href="product-shop-sidebar.html">
@@ -225,7 +157,7 @@
                                         <li><a href="page-checkout.html"><i class="fa fa-check-square"></i> Checkout</a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </li>
                             @if(!Auth::check())
                             <li><a  href="{{ route('login') }}" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>Sign in</a>
@@ -233,7 +165,7 @@
                             <li><a  href="{{ route('user.create') }}" data-effect="mfp-move-from-top"><i class="fa fa-edit"></i>Sign up</a>
                             </li>
                             @else
-                            <li><a  href="{{ route('profile') }}" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>My Profile</a>
+                            <li class="{!! Menu::isActiveRoute('profile') !!}"><a  href="{{ route('profile') }}" data-effect="mfp-move-from-top"><i class="fa fa-sign-in"></i>My Profile</a>
                             </li>
                             <li><a  href="{{ route('logout') }}" data-effect="mfp-move-from-top"><i class="fa fa-edit"></i>Logout</a>
                             </li>

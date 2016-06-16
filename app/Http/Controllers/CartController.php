@@ -133,7 +133,23 @@ class CartController extends Controller
             return Redirect::route('cart.index')->with('error','Something went wrong.Try Again.');
         }
     }
+
+    public function checkout() {
+        $carts = Cart::whereBuyerId(Auth::user()->member->id)->get();
+        $total = 0.00;
+        foreach ($carts as $cart ) {
+            $cart->item->price = (float) ($cart->item->price * $cart->amount);
+            $total +=  $cart->item->price;
+        }
+        return view('cart.checkout')
+                ->with('title', 'Checkout')
+                ->with('carts', $carts)
+                ->with('total', $total);
+    }
+
+
 }
+
 // public function store()
 //     {
 //         $cart = Cart::whereUserId(Auth::user()->id)->whereStatus(0)->first();

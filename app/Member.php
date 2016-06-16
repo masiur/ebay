@@ -37,4 +37,11 @@ class Member extends Model
     public function sellerCart(){
         return $this->hasMany('App\Cart', 'buyer_id', 'id');
     }
+
+    public function buyerRecord(){
+        return $this->belongsTo('App\SalesRecord', 'seller_id', 'id');
+    }
+    public function sellerRecord(){
+        return $this->belongsTo('App\SalesRecord', 'buyer_id', 'id');
+    }
 }
