@@ -33,7 +33,7 @@
                                             <th>Buyer</th>
                                             <th>QTY</th>
                                             <th>Price per QTY</th>
-                                            <th>salesrecord in Stock</th>
+                                            <th>Time of Transactions</th>
                                             <!-- <th>Type</th> -->
                                             
                                             
