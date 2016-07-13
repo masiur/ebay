@@ -12,6 +12,7 @@ use App\Member;
 use Auth;
 use App\Category;
 use App\Subcategory;
+use App\SalesRecord;
 
 class ItemController extends Controller
 {
@@ -46,7 +47,15 @@ class ItemController extends Controller
                   
     }
     
-    
+    public function salesrecord()
+    {
+        $salesrecords = SalesRecord::all();
+        return view('admin.item.salesrecord')
+                    ->with('title', 'Sales Record')
+                    ->with('salesrecords', $salesrecords)
+                    ->with('salesrecordCounter', 0);
+                  
+    }
 
     /**
      * Show the form for creating a new resource.

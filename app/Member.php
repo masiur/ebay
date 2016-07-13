@@ -43,4 +43,17 @@ class Member extends Model
     public function receiver_quote(){
         return $this->hasMany('App\Quote', 'receiver_id', 'id');
     }
+    public function buyerCart(){
+        return $this->hasOne('App\Cart', 'seller_id', 'id');
+    }
+    public function sellerCart(){
+        return $this->hasMany('App\Cart', 'buyer_id', 'id');
+    }
+
+    public function buyerRecord(){
+        return $this->belongsTo('App\SalesRecord', 'seller_id', 'id');
+    }
+    public function sellerRecord(){
+        return $this->belongsTo('App\SalesRecord', 'buyer_id', 'id');
+    }
 }

@@ -5,6 +5,7 @@
 
 
         <div class="container">
+        @include('includes.alert')
             <div class="row">
                 <div class="col-md-3">
                     <aside class="sidebar-left">
@@ -31,7 +32,7 @@
                             <li><a href="#"><i class="fa fa-plane"></i>Travel</a>
                             </li>
                         </ul>
-                        <div class="sidebar-box">
+                        <!-- <div class="sidebar-box">
                             <h5>Recent Viewed</h5>
                             <ul class="thumb-list">
                                 <li>
@@ -62,7 +63,7 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <div class="sidebar-box">
                             <h5>Popular</h5>
                             <ul class="thumb-list">
@@ -209,7 +210,7 @@
                         </div>
                         <hr/><a class="btn btn-primary" href="#">More Details</a>
                     </div>
-                    <div class="owl-carousel owl-slider" id="owl-carousel-slider" data-inner-pagination="true" data-white-pagination="true" data-nav="false">
+                    <!-- <div class="owl-carousel owl-slider" id="owl-carousel-slider" data-inner-pagination="true" data-white-pagination="true" data-nav="false">
                         <div>
                             <div class="bg-holder">
                                 <img src="couponia/img/branding__ipad_interactive_design_900x500.jpg" alt="Image Alternative text" title="Branding  iPad Interactive Design" />
@@ -243,8 +244,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gap"></div>
+                    </div> -->
+                    <!-- <div class="gap"></div>
                     <div class="row row-wrap">
                         <div class="col-md-4">
                             <div class="product-banner">
@@ -270,9 +271,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="gap gap-small"></div>
-                    <h1 class="mb20">Weekly Featured <small><a href="#">View All</a></small></h1>
+                    <!-- <h1 class="mb20">Weekly Featured <small><a href="#">View All</a></small></h1>
                     <div class="row row-wrap">
                         <div class="col-md-4">
                             <div class="product-thumb">
@@ -532,7 +533,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- this part is assumed to keep in homepage -->
                     <div class="gap gap-small"></div>
@@ -576,9 +577,9 @@
                                             </li>
                                         </ul>
                                         <ul class="product-actions-list">
-                                            <li><a class="btn btn-sm" href="#"><i class="fa fa-shopping-cart"></i> To Cart</a>
+                                            <li><a class="btn btn-sm" href="{{ route('cart.create', ['id' => $item->id]) }}"><i class="fa fa-shopping-cart"></i> To Cart</a>
                                             </li>
-                                            <li><a class="btn btn-sm" href="{!! route('item.details',$item->id) !!}">><i class="fa fa-bars"></i> Details</a>
+                                            <li><a class="btn btn-sm" href="{!! route('item.details',['id' => $item->id]) !!}">><i class="fa fa-bars"></i> Details</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -714,7 +715,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <div class="product-thumb">
                                 <header class="product-header">
                                     <img src="couponia/img/our_coffee_miss_u_800x600.jpg" alt="Image Alternative text" title="Our Coffee miss u" />
@@ -799,7 +800,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="gap gap-small"></div>
                 </div>

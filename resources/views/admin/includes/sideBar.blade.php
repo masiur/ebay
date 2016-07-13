@@ -55,6 +55,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ route('item.index') }}"><i class="ion-grid"></i> All Items</a></li>
+                    <li><a href="{{ route('salesrecord.index') }}"><i class="ion-compose"></i> Sales Record</a></li>
                     @endrole
                     <!-- admin portion end  -->
 
