@@ -20,8 +20,16 @@ class Quote extends Model
         return $this->belongsTo('App\Member', 'seller_id', 'id');
     }
 
+    public function buyer(){
+        return $this->belongsTo('App\Member', 'buyer_id', 'id');
+    }
+
     public function message(){
         return $this->hasMany('App\Message', 'quote_id', 'id');
+    }
+
+    public function receiver_member(){
+        return $this->belongsTo('App\Member', 'receiver_id', 'id');
     }
 
 

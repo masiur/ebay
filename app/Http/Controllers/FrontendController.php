@@ -38,7 +38,7 @@ class FrontendController extends Controller
                 // ->with('messages', $messages);
     }
 
-    public function details()
+    public function details($id)
     {
         $item = Item::find($id);
         return view('item')

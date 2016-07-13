@@ -16,10 +16,22 @@ class CreateQuotesTable extends Migration
             $table->increments('id');
             $table->integer('item_id')->unsigned();
             $table->integer('seller_id')->unsigned();
+            $table->integer('buyer_id')->unsigned();
+            $table->integer('receiver_id')->unsigned()->nullable();
             $table->double('decided_price')->nullable();
             $table->timestamps();
 
             $table->foreign('seller_id')
+                ->references('id')->on('members')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('buyer_id')
+                ->references('id')->on('members')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('receiver_id')
                 ->references('id')->on('members')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

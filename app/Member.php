@@ -24,11 +24,23 @@ class Member extends Model
         return $this->hasMany('App\Item', 'seller_id', 'id');
     }
 
-    public function seller(){
-        return $this->hasMany('App\Message', 'seller_id', 'id');
+    public function seller_quote(){
+        return $this->hasMany('App\Quote', 'seller_id', 'id');
     }
 
-    public function buyer(){
-        return $this->hasMany('App\Message', 'buyer_id', 'id');
+    public function buyer_quote(){
+        return $this->hasMany('App\Quote', 'buyer_id', 'id');
+    }
+
+    public function messager(){
+        return $this->hasMany('App\Message', 'messager_id', 'id');
+    }
+
+    public function receiver(){
+        return $this->hasMany('App\Message', 'receiver_id', 'id');
+    }
+
+    public function receiver_quote(){
+        return $this->hasMany('App\Quote', 'receiver_id', 'id');
     }
 }

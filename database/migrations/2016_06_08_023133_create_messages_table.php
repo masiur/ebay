@@ -16,19 +16,13 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->integer('quote_id')->unsigned();
             $table->integer('item_id')->unsigned();
-            $table->integer('buyer_id')->unsigned();
-            $table->integer('seller_id')->unsigned();
-            $table->text('message');
+            $table->integer('messager_id')->unsigned();
             $table->integer('receiver_id')->unsigned();
+            $table->text('message');
             $table->timestamps();
 
 
-            $table->foreign('buyer_id')
-                ->references('id')->on('members')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('seller_id')
+            $table->foreign('messager_id')
                 ->references('id')->on('members')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

@@ -15,9 +15,9 @@ Route::get('/', function () {
 	return Redirect::to('/home');
 });
 
-Route::get('/home', ['as'=>'user.create','uses' => 'FrontendController@home']);
+Route::get('/home', ['as'=>'home','uses' => 'FrontendController@home']);
 	
-Route::get('item/details',['as' => 'item.details', 'uses' => 'FrontendController@details']);
+Route::get('item/details/{id}',['as' => 'item.details', 'uses' => 'FrontendController@details']);
 
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
@@ -49,6 +49,10 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::get('item/{id}/edit',['as' => 'item.edit', 'uses' => 'ItemController@edit']);
 	Route::get('item/{id}/show',['as' => 'item.show', 'uses' => 'ItemController@show']);
 	Route::put('item/{id}',['as' => 'item.update', 'uses' => 'ItemController@update']);
+
+
+	// Quoted Item Management
+	Route::get('item/quote/{item}', ['as' => 'item.quote.add', 'uses' => 'QuoteController@add']);
 
 	Route::get('message',['as' => 'message', 'uses' => 'FrontendController@discussion']);
 

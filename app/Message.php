@@ -12,12 +12,12 @@ class Message extends Model
     protected $table = 'messages';
 
 
-    public function seller(){
-        return $this->belongsTo('App\Member', 'seller_id', 'id');
+    public function messager(){
+        return $this->belongsTo('App\Member', 'messager_id', 'id');
     }
 
-    public function buyer(){
-        return $this->belongsTo('App\Member', 'buyer_id', 'id');
+    public function receiver(){
+        return $this->belongsTo('App\Member', 'receiver_id', 'id');
     }
 
     public function quote(){
