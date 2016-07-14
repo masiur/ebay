@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,9 +26,21 @@ class FrontendController extends Controller
     public function home()
     {
         $items = Item::all();
+        $categories = Category::all();
         return view('home')
                 ->with('title', 'Home')
-                ->with('items', $items);
+                ->with('items', $items)
+                ->with('categories', $categories);
+    }
+
+    public function category_filter($id)
+    {
+        $items = Item::where('category_id', $id)->get();
+        $categories = Category::all();
+        return view('home')
+            ->with('title', 'Home')
+            ->with('items', $items)
+            ->with('categories', $categories);
     }
 
     public function discussion()

@@ -15,9 +15,16 @@
                             <div class="col-md-6">
                                     <!-- <h4>{{ $title }}</h4> -->
                             </div>
+                            @role('admin')
                             <div class="col-md-6">                            
                                 <a class="pull-right" href="{!! route('item.index')!!}"><button class="btn btn-success">Item List</button></a>
                             </div>
+                            @endrole
+                            @role('user')
+                            <div class="col-md-6">
+                                <a class="pull-right" href="{!! route('item.indexForMember')!!}"><button class="btn btn-success">My Items</button></a>
+                            </div>
+                            @endrole
                         </div>
                     </div>
 
@@ -25,7 +32,7 @@
                             
                                 <div class=" form"> 
 
-                                    {!! Form::open(array('route' => 'item.store' , 'method' => 'post', 'class' => 'cmxform form-horizontal tasi-form')) !!}
+                                    {!! Form::open(array('route' => 'item.store' , 'method' => 'post', 'files' => 'true', 'class' => 'cmxform form-horizontal tasi-form')) !!}
 
 
                                     <div class="form-group">

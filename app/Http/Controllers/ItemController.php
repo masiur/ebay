@@ -90,11 +90,12 @@ class ItemController extends Controller
         $img_url = 'uploads/item/default.jpg';
 
         if ($request->hasFile('image')) {
+            //return 1;
             $file = $request->file('image');
-            $destination = public_path().'/uploads/item/';
+            $destination = public_path('/uploads/item');
             $filename = time().$name.'.'.$file->getClientOriginalExtension();
             $file->move($destination, $filename);
-            $img_url = '/uploads/item/'.$filename;
+            $img_url = 'uploads/item/'.$filename;
         }
 
         $item = new Item();

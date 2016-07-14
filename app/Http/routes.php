@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', ['as'=>'home','uses' => 'FrontendController@home']);
+
+Route::get('/category/{id}', ['as' => 'category.filter', 'uses' => 'FrontendController@category_filter']);
 	
 Route::get('item/details/{id}',['as' => 'item.details', 'uses' => 'FrontendController@details']);
 
@@ -49,6 +51,8 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::get('item/{id}/edit',['as' => 'item.edit', 'uses' => 'ItemController@edit']);
 	Route::get('item/{id}/show',['as' => 'item.show', 'uses' => 'ItemController@show']);
 	Route::put('item/{id}',['as' => 'item.update', 'uses' => 'ItemController@update']);
+	Route::get('item',['as' => 'item.index', 'uses' => 'ItemController@index']);
+	Route::delete('item/{id}',['as' => 'item.delete', 'uses' => 'ItemController@destroy']);
 
 
 	// Quoted Item Management
@@ -114,8 +118,7 @@ Route::get('payment/status', array(
 		Route::delete('package/{id}',['as' => 'package.delete', 'uses' => 'PackageController@destroy']);
 
 		// Item CRUD
-		Route::get('item',['as' => 'item.index', 'uses' => 'ItemController@index']);
-		Route::delete('item/{id}',['as' => 'item.delete', 'uses' => 'ItemController@destroy']);
+
 
 		Route::get('salesrecord',['as' => 'salesrecord.index', 'uses' => 'ItemController@salesrecord']);
 		

@@ -68,7 +68,7 @@
                         </ul>
                     </li>
 
-                    <li class="has-submenu"><a href="#"><i class="ion-email"></i> <span class="nav-label">Mail</span></a>
+                    <!--<li class="has-submenu"><a href="#"><i class="ion-email"></i> <span class="nav-label">Mail</span></a>
                         <ul class="list-unstyled">
                             <li><a href="#">Inbox</a></li>
                             <li><a href="#">Compose Mail</a></li>
@@ -83,7 +83,7 @@
                             <li><a href="gmap.html"> Google Map</a></li>
                             <li><a href="vector-map.html"> Vector Map</a></li>
                         </ul>
-                    </li>
+                    </li>-->
 
                 </ul>
             </nav>

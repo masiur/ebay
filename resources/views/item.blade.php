@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <div id="review-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
+                    <!--<div id="review-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
                         <h3>Add a Review</h3>
                         <form>
                             <div class="form-group">
@@ -41,19 +41,16 @@
                             </div>
                             <input type="submit" class="btn btn-primary" value="Submit" />
                         </form>
-                    </div>
+                    </div>-->
                     <div class="row">
                         <div class="col-md-7">
                             <div class="fotorama" data-nav="thumbs" data-allowfullscreen="1" data-thumbheight="150" data-thumbwidth="150">
-                                <img src="/couponia/img/gamer_chick_800x600.jpg" alt="Image Alternative text" title="Gamer Chick" />
-                                <img src="/couponia/img/amaze_800x600.jpg" alt="Image Alternative text" title="AMaze" />
-                                <img src="/couponia/img/urbex_esch_lux_with_laney_and_laaaaag_800x600.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
-                                <img src="/couponia/img/food_is_pride_800x600.jpg" alt="Image Alternative text" title="Food is Pride" />
+                                <img src="{{ "/".$item->img_url }}" alt="Image Alternative text" title="Gamer Chick" />
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="product-info box">
-                                <ul class="icon-group icon-list-rating text-color" title="4.5/5 rating">
+                                <!--<ul class="icon-group icon-list-rating text-color" title="4.5/5 rating">
                                     <li><i class="fa fa-star"></i>
                                     </li>
                                     <li><i class="fa fa-star"></i>
@@ -64,22 +61,22 @@
                                     </li>
                                     <li><i class="fa fa-star-half-empty"></i>
                                     </li>
-                                </ul>	<small><a href="#" class="text-muted">based on 8 reviews</a></small>
-                                <h3>New Glass Collection</h3>
-                                <p class="product-info-price">$150</p>
-                                <p class="text-smaller text-muted">Nostra luctus vulputate cum litora accumsan est turpis enim iaculis nisi justo nec etiam fermentum cum molestie vehicula eu arcu praesent commodo sociis nunc duis vel sem senectus nunc egestas</p>
-                                <ul class="icon-list list-space product-info-list">
+                                </ul>-->
+                                <h3>{{ $item->name }}</h3>
+                                <p class="product-info-price">{{ $item->price }}</p>
+                                <p class="text-smaller text-muted">{{ $item->description }}</p>
+                                <!--<ul class="icon-list list-space product-info-list">
                                     <li><i class="fa fa-check"></i>Id cubilia</li>
                                     <li><i class="fa fa-check"></i>Euismod primis</li>
                                     <li><i class="fa fa-check"></i>Amet porta</li>
                                     <li><i class="fa fa-check"></i>Facilisis cum</li>
                                     <li><i class="fa fa-check"></i>Morbi curae</li>
-                                </ul>
+                                </ul>-->
                                 <ul class="list-inline">
-                                    <li><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                    <li><a href="{{ route('cart.create', ['id' => $item->id]) }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                     </li>
-                                    <li><a href="#" class="btn"><i class="fa fa-star"></i> To Wishlist</a>
-                                    </li>
+                                    <!--<li><a href="#" class="btn"><i class="fa fa-star"></i> To Wishlist</a>
+                                    </li>-->
                                 </ul>
                             </div>
                         </div>
