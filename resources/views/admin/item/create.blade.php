@@ -17,12 +17,12 @@
                             </div>
                             @role('admin')
                             <div class="col-md-6">                            
-                                <a class="pull-right" href="{!! route('item.index')!!}"><button class="btn btn-success">Item List</button></a>
+                                <a class="pull-right" href="{!! route('product.index')!!}"><button class="btn btn-success">Product List</button></a>
                             </div>
                             @endrole
                             @role('user')
                             <div class="col-md-6">
-                                <a class="pull-right" href="{!! route('item.indexForMember')!!}"><button class="btn btn-success">My Items</button></a>
+                                <a class="pull-right" href="{!! route('product.indexForMember')!!}"><button class="btn btn-success">My Products</button></a>
                             </div>
                             @endrole
                         </div>
@@ -32,68 +32,54 @@
                             
                                 <div class=" form"> 
 
-                                    {!! Form::open(array('route' => 'item.store' , 'method' => 'post', 'files' => 'true', 'class' => 'cmxform form-horizontal tasi-form')) !!}
+                                    {!! Form::open(array('route' => 'product.store' , 'method' => 'post', 'files' => 'true', 'class' => 'cmxform form-horizontal tasi-form')) !!}
 
 
                                     <div class="form-group">
-                                        {!! Form::label('name', "Item Name*", array('class' => 'control-label col-lg-2')) !!}
+                                        {!! Form::label('name', "Product Name*: ", array('class' => 'control-label col-lg-2')) !!}
                                         <div class="col-lg-6">
-                                            {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Enter Item Name', 'required' => 'required', 'aria-required' =>'true')) !!}
+                                            {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Enter Product Name', 'required' => 'required', 'aria-required' =>'true')) !!}
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        {!! Form::label('description', "Description", array('class' => 'control-label col-lg-2')) !!}
+                                        {!! Form::label('product_category_id', "Product Category*: ", array('class' => 'control-label col-lg-2')) !!}
+                                        <div class="col-lg-6">
+                                            {!! Form::select('product_category_id', $product_categories, null, array('class' => 'form-control', 'required' => 'required')) !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::label('price', "Price*: ", array('class' => 'control-label col-lg-2')) !!}
+                                        <div class="col-lg-6">
+                                            {!! Form::text('price', null, array('class' => 'form-control', 'placeholder' => 'Price of the Product', 'required' => 'required')) !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::label('amount', "Stock Amount*: ", array('class' => 'control-label col-lg-2')) !!}
+                                        <div class="col-lg-6">
+                                            {!! Form::text('amount', null, array('class' => 'form-control', 'placeholder' => 'Amount in Stock', 'required' => 'required')) !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::label('description', "Description: ", array('class' => 'control-label col-lg-2')) !!}
                                         <div class="col-lg-6">
                                             {!! Form::textarea('description', null, array('class' => 'form-control','placeholder' => 'Description of the Item', 'row' => 3)) !!}
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        {!! Form::label('category_id', "Category*", array('class' => 'control-label col-lg-2')) !!}
+                                        {!! Form::label('img_url', "Image of the Item*", array('class' => 'control-label col-lg-2')) !!}
                                         <div class="col-lg-6">
-                                            {!! Form::select('category_id', $categories, null, array('class' => 'form-control', 'required' => 'required')) !!}
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        {!! Form::label('subcategory_id', "Sub Category", array('class' => 'control-label col-lg-2')) !!}
-                                        <div class="col-lg-6">
-                                            {!! Form::select('subcategory_id', $subcategories, null, array('class' => 'form-control')) !!}
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        {!! Form::label('price', "Price*", array('class' => 'control-label col-lg-2')) !!}
-                                        <div class="col-lg-6">
-                                            {!! Form::text('price', null, array('class' => 'form-control', 'placeholder' => 'Price of the Item', 'required' => 'required')) !!}
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        {!! Form::label('amount_in_stock', "Stock Amount*", array('class' => 'control-label col-lg-2')) !!}
-                                        <div class="col-lg-6">
-                                            {!! Form::text('amount_in_stock', null, array('class' => 'form-control', 'placeholder' => 'Amount in Stock', 'required' => 'required')) !!}
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        {!! Form::label('type', "Type of the Item*", array('class' => 'control-label col-lg-2')) !!}
-                                        <div class="col-lg-6">
-                                            {!! Form::select('type', $type, null, array('class' => 'form-control', 'required' => 'required')) !!}
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        {!! Form::label('image', "Image of the Item*", array('class' => 'control-label col-lg-2')) !!}
-                                        <div class="col-lg-6">
-                                            {!! Form::file('image', null, array('class' => 'form-control', 'placeholder' => 'Image of the Item', 'required' => 'required')) !!}
+                                            {!! Form::file('img_url', null, array('class' => 'form-control', 'placeholder' => 'Image of the Item', 'required' => 'required')) !!}
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-6">
-                                        {!! Form::submit('Add Item', array('class' => 'btn btn-success')) !!}
+                                        {!! Form::submit('Add Product', array('class' => 'btn btn-success')) !!}
                                         </div>
                                     </div>
 

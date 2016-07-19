@@ -90,23 +90,23 @@ Route::get('payment/status', array(
 	Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function()
 	{
 
-		// Category CRUD
-		Route::get('category',['as' => 'category.index', 'uses' => 'CategoryController@index']);
-		Route::get('category/create',['as' => 'category.create', 'uses' => 'CategoryController@create']);
-		Route::post('category',['as' => 'category.store', 'uses' => 'CategoryController@store']);
-		Route::get('category/{id}/edit',['as' => 'category.edit', 'uses' => 'CategoryController@edit']);
-		Route::get('category/{id}/show',['as' => 'category.show', 'uses' => 'CategoryController@show']);
-		Route::put('category/{id}',['as' => 'category.update', 'uses' => 'CategoryController@update']);
-		Route::delete('category/{id}',['as' => 'category.delete', 'uses' => 'CategoryController@destroy']);
+		// Shop Category CRUD
+		Route::get('category/shop',['as' => 'shop.category.index', 'uses' => 'CategoryController@shop_index']);
+		Route::get('category/shop/create',['as' => 'shop.category.create', 'uses' => 'CategoryController@shop_create']);
+		Route::post('category/shop',['as' => 'shop.category.store', 'uses' => 'CategoryController@shop_store']);
+		Route::get('category/shop/{id}/edit',['as' => 'shop.category.edit', 'uses' => 'CategoryController@shop_edit']);
+		//Route::get('category/shop/{id}/show',['as' => 'shop.category.show', 'uses' => 'CategoryController@show']);
+		Route::put('category/shop/{id}',['as' => 'shop.category.update', 'uses' => 'CategoryController@shop_update']);
+		Route::delete('category/shop/{id}',['as' => 'shop.category.delete', 'uses' => 'CategoryController@shop_destroy']);
 
-		// SubCategory CRUD
-		Route::get('subCategory',['as' => 'subCategory.index', 'uses' => 'SubCategoryController@index']);
-		Route::get('subCategory/create',['as' => 'subCategory.create', 'uses' => 'SubCategoryController@create']);
-		Route::post('subCategory',['as' => 'subCategory.store', 'uses' => 'SubCategoryController@store']);
-		Route::get('subCategory/{id}/edit',['as' => 'subCategory.edit', 'uses' => 'SubCategoryController@edit']);
-		Route::get('subCategory/{id}/show',['as' => 'subCategory.show', 'uses' => 'SubCategoryController@show']);
-		Route::put('subCategory/{id}',['as' => 'subCategory.update', 'uses' => 'SubCategoryController@update']);
-		Route::delete('subCategory/{id}',['as' => 'subCategory.delete', 'uses' => 'SubCategoryController@destroy']);
+		// Product Category CRUD
+		Route::get('category/product',['as' => 'product.category.index', 'uses' => 'SubCategoryController@product_index']);
+		Route::get('category/product/create',['as' => 'product.category.create', 'uses' => 'SubCategoryController@product_create']);
+		Route::post('category/product',['as' => 'product.category.store', 'uses' => 'SubCategoryController@product_store']);
+		Route::get('category/product/{id}/edit',['as' => 'product.category.edit', 'uses' => 'SubCategoryController@product_edit']);
+		//Route::get('category/product/{id}/show',['as' => 'product.category.show', 'uses' => 'SubCategoryController@show']);
+		Route::put('category/product/{id}',['as' => 'product.category.update', 'uses' => 'SubCategoryController@product_update']);
+		Route::delete('category/product/{id}',['as' => 'product.category.delete', 'uses' => 'SubCategoryController@product_destroy']);
 
 		// Package CRUD
 		Route::get('package',['as' => 'package.index', 'uses' => 'PackageController@index']);

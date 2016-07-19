@@ -21,11 +21,12 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(EntrustTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
-        $this->call(SubcategoriesTableSeeder::class);
+        $this->call(ShopCategoriesTableSeeder::class);
+        $this->call(ProductCategoriesTableSeeder::class);
         $this->call(PackagesTableSeeder::class);
         $this->call(MembersTableSeeder::class);
-        $this->call(ItemTableSeeder::class);
+        $this->call(ShopsTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
 
 
         if (env('DB_CONNECTION') == 'mysql') {

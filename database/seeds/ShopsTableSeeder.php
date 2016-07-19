@@ -2,33 +2,35 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use App\Member;
+use App\Shop;
 
 // composer require laracasts/testdummy
-use Laracasts\TestDummy\Factory as TestDummy;
+// use Laracasts\TestDummy\Factory as TestDummy;
 
-class MembersTableSeeder extends Seeder
+class ShopsTableSeeder extends Seeder
 {
     public function run()
     {
         $faker = Faker::create();
 
-        Member::create([
-            'user_id' => 2,
+        Shop::create([
             'name' => $faker->name,
+            'about' => $faker->sentence,
             'address' => $faker->address,
-            'mobile' => $faker->phoneNumber,
-            'has_shop' => 1,
+            'img_url' => $faker->imageUrl(),
+            'shop_category_id' => 1,
+            'seller_id' => 1,
             'created_at' => $faker->date('Y-m-d H:i:s'),
             'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
 
-        Member::create([
-            'user_id' => 3,
+        Shop::create([
             'name' => $faker->name,
+            'about' => $faker->sentence,
             'address' => $faker->address,
-            'mobile' => $faker->phoneNumber,
-            'has_shop' => 1,
+            'img_url' => $faker->imageUrl(),
+            'shop_category_id' => 1,
+            'seller_id' => 2,
             'created_at' => $faker->date('Y-m-d H:i:s'),
             'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);

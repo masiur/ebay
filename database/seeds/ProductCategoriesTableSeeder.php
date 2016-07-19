@@ -2,27 +2,23 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use App\Subcategory;
+use App\ProductCategory;
 
-// composer require laracasts/testdummy
-use Laracasts\TestDummy\Factory as TestDummy;
 
-class SubcategoriesTableSeeder extends Seeder
+class ProductCategoriesTableSeeder extends Seeder
 {
     public function run()
     {
         $faker = Faker::create();
 
-        Subcategory::create([
+        ProductCategory::create([
             'name' => $faker->randomLetter,
-            'category_id' => 1,
             'created_at' => $faker->date('Y-m-d H:i:s'),
             'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
 
-        Subcategory::create([
+        ProductCategory::create([
             'name' => $faker->randomLetter,
-            'category_id' => 1,
             'created_at' => $faker->date('Y-m-d H:i:s'),
             'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);

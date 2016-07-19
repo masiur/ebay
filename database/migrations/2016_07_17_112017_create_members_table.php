@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubcategoriesTable extends Migration
+class CreateMembersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,18 @@ class CreateSubcategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('subcategories', function (Blueprint $table) {
+        Schema::create('members', function(Blueprint $table){
             $table->increments('id');
-            $table->text('name');
-            $table->integer('category_id')->unsigned();
+            $table->string('name');
+            $table->text('address')->nullable();
+            $table->string('mobile')->nullable();
+            $table->boolean('has_shop')->nullable();
             $table->timestamps();
 
-            $table->foreign('category_id')
-                ->references('id')->on('categories')
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -32,6 +36,6 @@ class CreateSubcategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('subcategories');
+        Schema::drop('members');
     }
 }

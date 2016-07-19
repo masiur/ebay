@@ -17,7 +17,7 @@
                                     <!-- <h4>{{ $title }}</h4> -->
                             </div>
                             <div class="col-md-6">                            
-                                <a class="pull-right" href="{!! route('category.index')!!}"><button class="btn btn-success">Category List</button></a>
+                                <a class="pull-right" href="{!! route('shop.category.index')!!}"><button class="btn btn-success">Shop Category List</button></a>
                             </div>
                          </div>
                     </div>
@@ -26,11 +26,11 @@
                             
                                 <div class=" form"> 
 
-                                    {!! Form::open(array('route' => 'category.store' , 'method' => 'post', 'class' => 'cmxform form-horizontal tasi-form')) !!}
+                                    {!! Form::open(array('route' => 'shop.category.store' , 'method' => 'post', 'class' => 'cmxform form-horizontal tasi-form')) !!}
 
 
                                     <div class="form-group">
-                                        {!! Form::label('name', "Category Name (required)", array('class' => 'control-label col-lg-2')) !!}
+                                        {!! Form::label('name', "Category Name*: ", array('class' => 'control-label col-lg-2')) !!}
                                         <div class="col-lg-10">
                                             {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Enter Category Name', 'required' => 'required', 'aria-required' =>'true')) !!}
                                         </div>
@@ -38,7 +38,7 @@
 
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
-                                        {!! Form::submit('Add category', array('class' => 'btn btn-primary m-l-10')) !!}
+                                        {!! Form::submit('Add Shop Category', array('class' => 'btn btn-primary m-l-10')) !!}
                                         </div>
                                     </div>
 

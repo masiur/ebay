@@ -14,7 +14,7 @@
                                     <h4>{{ $title }}</h4>
                                 </div>
                                 <div class="col-md-6">                            
-                                     <a class="pull-right" href="{!! route('category.create')!!}"><button class="btn btn-success">Add Category</button></a>
+                                     <a class="pull-right" href="{!! route('product.category.create')!!}"><button class="btn btn-success">Add Shop Category</button></a>
                                 </div>
                             </div>
                         </div>
@@ -22,24 +22,24 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                                @if(count($categories))
+                                @if(count($product_categories))
                                     <table  id="dataTable" class="table table-striped table-bordered">
                                         <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>category Name</th>
+                                            <th>Category Name</th>
                                             <th>#</th>
                                             <th>#</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach ($categories as $category)
+                                        @foreach ($product_categories as $product_category)
                                             <tr>
-                                                <td>{!! $category->id !!}</td>
-                                                <td>{!! $category->name !!}</td>
-                                                <!-- <td><a class="btn btn-info btn-xs btn-archive Showbtn" href="{!!route('category.show',$category->id)!!}"  style="margin-right: 3px;">Show Details</a></td> -->
-                                                <td><a class="btn btn-success btn-xs btn-archive Editbtn" href="{!!route('category.edit',$category->id)!!}"  style="margin-right: 3px;">Edit</a></td>
-                                                <td><a href="#" class="btn btn-danger btn-xs btn-archive deleteBtn" data-toggle="modal" data-target="#deleteConfirm" deleteId="{!! $category->id!!}">Delete</a></td>
+                                                <td>{!! $product_category->id !!}</td>
+                                                <td>{!! $product_category->name !!}</td>
+
+                                                <td><a class="btn btn-success btn-xs btn-archive Editbtn" href="{!!route('product.category.edit',$product_category->id)!!}"  style="margin-right: 3px;">Edit</a></td>
+                                                <td><a href="#" class="btn btn-danger btn-xs btn-archive deleteBtn" data-toggle="modal" data-target="#deleteConfirm" deleteId="{!! $product_category->id!!}">Delete</a></td>
                                             </tr>
 
                                         @endforeach
@@ -69,7 +69,7 @@
                     Are you sure to delete?
                 </div>
                 <div class="modal-footer">
-                    {!! Form::open(array('route' => array('category.delete', 0), 'method'=> 'delete', 'class' => 'deleteForm')) !!}
+                    {!! Form::open(array('route' => array('product.category.delete', 0), 'method'=> 'delete', 'class' => 'deleteForm')) !!}
                     <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
                     {!! Form::submit('Yes, Delete', array('class' => 'btn btn-primary')) !!}
                     {!! Form::close() !!}
@@ -103,7 +103,7 @@
 
             $(document).on("click", ".deleteBtn", function() {
                 var deleteId = $(this).attr('deleteId');
-                var url = "<?php echo URL::route('category.index'); ?>";
+                var url = "<?php echo URL::route('product.category.index'); ?>";
                 $(".deleteForm").attr("action", url+'/'+deleteId);
             });
 

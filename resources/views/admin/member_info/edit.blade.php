@@ -16,9 +16,6 @@
                             <div class="col-md-6">
                                     <h4>{{ $title }}</h4>
                             </div>
-                            <div class="col-md-6">                            
-                                <a class="pull-right" href="{!! route('category.index')!!}"><button class="btn btn-success">Category List</button></a>
-                            </div>
                          </div>
                     </div>
 
@@ -26,20 +23,34 @@
                             
                                 <div class=" form"> 
 
-                                    {!! Form::model($category, array('route' => ['category.update',$category->id], 'method' => 'PUT', 'class' => 'cmxform form-horizontal tasi-form')) !!}
+                                    {!! Form::model($member, array('route' => ['product.category.update',$member->id], 'method' => 'PUT', 'class' => 'cmxform form-horizontal tasi-form')) !!}
 
 
                                     <div class="form-group">
-                                        {!! Form::label('name', 'Category Name (required)', array('class' => 'control-label col-lg-2')) !!}
+                                        {!! Form::label('name', 'Full Name*: ', array('class' => 'control-label col-lg-2')) !!}
                                         <div class="col-lg-10">
-                                            {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Enter category Name', 'required' => 'required')) !!}
+                                            {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Enter Full Name', 'required' => 'required')) !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::label('address', 'Address*: ', array('class' => 'control-label col-lg-2')) !!}
+                                        <div class="col-lg-10">
+                                            {!! Form::textarea('address', null, array('class' => 'form-control', 'placeholder' => 'Enter Address', 'required' => 'required')) !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::label('mobile', 'Mobile No.*: ', array('class' => 'control-label col-lg-2')) !!}
+                                        <div class="col-lg-10">
+                                            {!! Form::text('mobile', null, array('class' => 'form-control', 'placeholder' => 'Enter Mobile Number', 'required' => 'required')) !!}
                                         </div>
                                     </div>
 
 
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
-                                        {!! Form::submit('Save Changes', array('class' => 'btn btn-success m-l-10')) !!}
+                                        {!! Form::submit('Update Personal Informations', array('class' => 'btn btn-success m-l-10')) !!}
                                         </div>
                                     </div>
 

@@ -2,24 +2,22 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use App\Category;
+use App\ShopCategory;
 
-// composer require laracasts/testdummy
-use Laracasts\TestDummy\Factory as TestDummy;
 
-class CategoriesTableSeeder extends Seeder
+class ShopCategoriesTableSeeder extends Seeder
 {
     public function run()
     {
         $faker = Faker::create();
 
-        Category::create([
+        ShopCategory::create([
             'name' => $faker->randomLetter,
             'created_at' => $faker->date('Y-m-d H:i:s'),
             'updated_at' => $faker->date('Y-m-d H:i:s')
         ]);
 
-        Category::create([
+        ShopCategory::create([
             'name' => $faker->randomLetter,
             'created_at' => $faker->date('Y-m-d H:i:s'),
             'updated_at' => $faker->date('Y-m-d H:i:s')

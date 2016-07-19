@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,32 +12,31 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('products', function(Blueprint $table){
             $table->increments('id');
-            $table->text('name');      
-            $table->text('description')->nullable();
-            $table->integer('category_id')->unsigned();
-            $table->integer('subcategory_id')->unsigned()->nullable();
-            $table->integer('seller_id')->unsigned();
+            $table->string('name');
             $table->double('price');
-            $table->integer('amount_in_stock');
-            $table->enum('type', ['buy', 'quote']);
-            $table->text('img_url');
+            $table->integer('amount');
+            $table->text('description');
+            $table->text('specification')->nullable();
+            $table->string('img_url');
             $table->timestamps();
 
-
+            $table->integer('seller_id')->unsigned();
             $table->foreign('seller_id')
                 ->references('id')->on('members')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('category_id')
-                ->references('id')->on('categories')
+            $table->integer('shop_id')->unsigned();
+            $table->foreign('shop_id')
+                ->references('id')->on('shops')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('subcategory_id')
-                ->references('id')->on('subcategories')
+            $table->integer('product_category_id')->unsigned();
+            $table->foreign('product_category_id')
+                ->references('id')->on('product_categories')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -50,6 +49,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('items');
+        Schema::drop('products');
     }
 }
